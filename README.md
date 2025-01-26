@@ -1,24 +1,16 @@
-# Utilities 
+# Utils
 
 Utility scripts created for machines on the TC Network.
 
-## Topics
+## Tools
 
-	- system analysis 
-	- network analysis 
-	- program testing 
+This repository will have a collection of useful tools that relate to the following topics:
 
-## Uses 
+1. Network analysis 
+2. System analysis 
+3. Program testing
+4. General automation 
 
-This secton will describe how to use these scripts. 
-
-### Batch 
-
-Here we will explain scripts designed for Windows machines. 
-
-### Bash 
-
-Here we will explain scripts designed for Linux machines. 
 
 ## Acknowledgements
 
@@ -30,4 +22,3 @@ Here we will explain scripts designed for Linux machines.
     TC 
         th3orycc@gmail.com
         Virginia Beach, VA
- 
