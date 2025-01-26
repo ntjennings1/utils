@@ -12,11 +12,11 @@ Utility scripts created for machines on the TC Network.
 
 This secton will describe how to use these scripts. 
 
-### Windows 
+### Batch 
 
 Here we will explain scripts designed for Windows machines. 
 
-### Linux 
+### Bash 
 
 Here we will explain scripts designed for Linux machines. 
 
@@ -25,7 +25,7 @@ Here we will explain scripts designed for Linux machines.
     Noah Jennings 
         TC 
         ntjennings1@gmail.com
-        Pomona, CA
+        Virginia Beach, VA
         
     TC 
         th3orycc@gmail.com
