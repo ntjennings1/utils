@@ -9,17 +9,6 @@ Using different operating systems, version, or software can not guarantee simila
 - Windows 11
 ```
 
-## Utility Uses
-
-This section will cover the different utilities and how to use them.
-
-### NetCheck
-This utility will check whether or not the users machine is connected to the internet. Use by entering the following command from inside this directory:
-
-```
-    > netcheck.bat
-```
-
 ## Acknowledgements
 ```
 Noah Jennings 
