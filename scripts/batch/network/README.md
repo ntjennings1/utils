@@ -1,4 +1,4 @@
-# Networkk
+# Network
 
 These scripts can be used to manipulate your machines network options.
 

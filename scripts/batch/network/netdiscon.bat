@@ -5,7 +5,7 @@ Rem Attempts to disconnect from a Wireless Access Point.
 	cls
 	echo please wait ...
 
-    netsh wlan disconnect
+	netsh wlan disconnect
 	if not errorlevel 1 goto :noerror
 	if errorlevel 1 goto :error
 

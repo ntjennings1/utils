@@ -5,10 +5,10 @@ Rem Attempts to connect to a Wireless Access Point.
 	cls
 	echo please wait ...
 
-    set ssid %1
+	set ssid %1
 
-    netsh wlan disconnect
-    netsh wlan connect %1%
+	netsh wlan disconnect
+	netsh wlan connect %1%
 	if not errorlevel 1 goto :noerror
 	if errorlevel 1 goto :error
 
