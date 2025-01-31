@@ -14,7 +14,7 @@ Rem Attempts to disconnect from a Wireless Access Point.
 	echo Disconnected successfully.
 	EXIT /B
 
-	Rem Displays the device is not connected
+	Rem Displays an error in disconnecting.
 	:error
 	echo Error in disconnecting.
 	EXIT /B

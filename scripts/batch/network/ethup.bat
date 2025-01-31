@@ -1,4 +1,4 @@
-Rem Attempts to enable Ethernet interface.
+Rem Attempts to enable the Ethernet interface.
 :netcheck
 	@echo OFF
 
@@ -9,12 +9,12 @@ Rem Attempts to enable Ethernet interface.
 	if not errorlevel 1 goto :noerror
 	if errorlevel 1 goto :error
 
-	Rem Displays the device is connected.
+	Rem Displays the device is enabled.
 	:noerror
 	echo Enabled successfully.
 	EXIT /B
 
-	Rem Displays the device is not connected
+	Rem Displays an error in enabling.
 	:error
 	echo Error in enabling.
 	EXIT /B

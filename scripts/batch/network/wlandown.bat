@@ -1,4 +1,4 @@
-Rem Attempts to disable Wi-Fi interface.
+Rem Attempts to disable the Wi-Fi interface.
 :netcheck
 	@echo OFF
 
@@ -9,12 +9,12 @@ Rem Attempts to disable Wi-Fi interface.
 	if not errorlevel 1 goto :noerror
 	if errorlevel 1 goto :error
 
-	Rem Displays the device is connected.
+	Rem Displays the device is disabled.
 	:noerror
 	echo Disabled successfully.
 	EXIT /B
 
-	Rem Displays the device is not connected
+	Rem Displays an error in disabling.
 	:error
 	echo Error in disabling.
 	EXIT /B

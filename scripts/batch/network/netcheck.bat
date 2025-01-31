@@ -15,7 +15,7 @@ Rem Checks if the device is connected to the Internet.
 	echo Connected.
 	EXIT /B
 
-	Rem Displays the device is not connected
+	Rem Displays the device is not connected.
 	:error
 	echo Not connected.
 	EXIT /B

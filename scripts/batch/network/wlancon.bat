@@ -17,7 +17,7 @@ Rem Attempts to connect to a Wireless Access Point.
 	echo Connected successfully.
 	EXIT /B
 
-	Rem Displays the device is not connected
+	Rem Displays an error in connecting.
 	:error
 	echo Error in connecting.
 	EXIT /B
