@@ -1,43 +1,99 @@
+/**
+ * All imports.
+ */
 #include "cipher.h"
 
+/**
+ * Implementation of the transposition cipher. 
+ * 
+ * The transposition cipher is an encryption algorithm that uses 
+ * permutation and order to encrypt plaintext to ciphertext. 
+ * 
+ */
 Cipher::Cipher(string key, string ptext)
 {
     this->key = key;
     this->ptext = ptext;  
 }
 
+/**
+ * Gets the cipher key.
+ * 
+ * @return key A string representing the cipher key. 
+ */
 string Cipher::getKey(){
     return key; 
 }
 
+/**
+ * Sets the cipher key.
+ * 
+ * @param key A string representing the cipher key.
+ */
 void Cipher::setKey(string key){
     this->key = key;
 }
 
+/**
+ * Gets the plaintext.
+ * 
+ * @return ptext A string representing the plaintext.
+ */
 string Cipher::getPlaintext(){
     return ptext;
 }
 
+/**
+ * Sets the plaintext.
+ * 
+ * @param ptext A string representing the plaintext.
+ */
 void Cipher::setPlaintext(string ptext){
     this->ptext = ptext;
 }
 
+/**
+ * Gets the ciphertext.
+ * 
+ * @return ctext A string representing the ciphertext.
+ */
 string Cipher::getCiphertext(){
     return ctext;
 }
 
+/**
+ * Sets the ciphertext.
+ * 
+ * @param ctext A string representing the ciphertext.
+ */
 void Cipher::setCiphertext(string ctext){
     this->ctext = ctext; 
 }
 
+/**
+ * Gets the cipher table.
+ * 
+ * @return table A vector of string vectors describing the cipher table.
+ */
 vector<vector<string>> Cipher::getTable(){
     return table; 
 }
 
+/**
+ * Sets the cipher table.
+ * 
+ * @param table A vector of string vectors with plaintext.
+ */
 void Cipher::setTable(vector<vector<string>>& table){
     this->table = table; 
 }
 
+/**
+ * Initializes a row.
+ * 
+ * @param len An integer describing the length of the table.
+ * @param row A string vector with plaintext.
+ */
 void Cipher::rowInit(int len, vector<string>& row){
     int i = 0;
     for (i; i < len; i ++){
@@ -45,6 +101,9 @@ void Cipher::rowInit(int len, vector<string>& row){
     }
 }
 
+/**
+ * Shows the cipher table.
+ */
 void Cipher::showTable(){
 
     cout << endl;
@@ -57,6 +116,11 @@ void Cipher::showTable(){
     cout << endl;
 }
 
+/**
+ * Show a specified row.
+ * 
+ * @param row A string vector with plaintext.
+ */
 void Cipher::showRow(vector<string>& row){
 
     for (const auto& el : row){
@@ -65,6 +129,9 @@ void Cipher::showRow(vector<string>& row){
     cout << endl;
 }
 
+/**
+ * Put the key into the table.
+ */
 void Cipher::addKey(){
 
     vector<string> row;
@@ -77,6 +144,9 @@ void Cipher::addKey(){
     this->addRow(row); 
 }
 
+/**
+ * Put the plaintext into the table.
+ */
 void Cipher::addPlaintext(){
 
     int i = 0; 
@@ -112,10 +182,18 @@ void Cipher::addPlaintext(){
     }
 }
 
+/**
+ * Add a row to the table.
+ * 
+ * @param row A vector of string vectors.  
+ */
 void Cipher::addRow(vector <string>& row){
     table.push_back(row); 
 }
 
+/**
+ * Find the order of characters in the key.
+ */
 void Cipher::order(){
   
     vector<string> row; 
@@ -145,6 +223,9 @@ void Cipher::order(){
     this->addRow(row);
 }
 
+/**
+ * Split the ciphertext into blocks.
+ */
 void Cipher::blockify(){
     int i = 0;
     int index = 0;
@@ -167,6 +248,9 @@ void Cipher::blockify(){
 
 }
 
+/**
+ * Encrypt the plaintext using the key.
+ */
 void Cipher::encrypt(){
     int id = 1; 
     int col = 0;
@@ -200,6 +284,9 @@ void Cipher::encrypt(){
     cout << "Plaintext encrypted" << endl;
 }
 
+/**
+ * Stage the cipher table.
+ */
 void Cipher::stage(){
 
     this->addKey();
@@ -208,6 +295,9 @@ void Cipher::stage(){
     this->showTable();
 }
 
+/**
+ * Provide a short description of the cipher being used.
+ */
 void Cipher::describe(){
     cout << "Description:\n";
     cout << "This is the tranposition cipher method.\n";

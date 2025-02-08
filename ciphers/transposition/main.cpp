@@ -1,3 +1,6 @@
+/**
+ * All imports.
+ */
 #include <iostream>
 #include <string>
 #include <unistd.h>
@@ -5,6 +8,12 @@
 
 using namespace std;
 
+/**
+ * Runs the cipher program.
+ * 
+ * @param argc The amount of available arguments.
+ * @param argv A list of the available arguments.
+ */
 int main(int argc, char* argv[])
 {
    string key; 
