@@ -88,6 +88,14 @@ void Cipher::setTable(vector<vector<string>>& table){
     this->table = table; 
 }
 
+int Cipher::getRows(){
+    return rows;
+}
+
+void Cipher::setRows(int rows){
+    this->rows = rows;
+}
+
 /**
  * Initializes a row.
  * 
@@ -150,16 +158,17 @@ void Cipher::addKey(){
 void Cipher::addPlaintext(){
 
     int i = 0; 
+    int id = 0; 
     vector<string> row; 
     string temp = this->getPlaintext(); 
+    int len = this->getKey().length();
 
     temp.erase(remove(temp.begin(), temp.end(), ' '), temp.end());
     temp.erase(remove(temp.begin(), temp.end(), '.'), temp.end());
-    cout << temp << endl;; 
-
+    
     for (const auto& element : temp){
         string el(1, element);
-        if (i == (this->getKey().length() - 1)){
+        if (i == (len - 1)){
             row.push_back(el);
             this->addRow(row);
             row.clear();
@@ -167,14 +176,15 @@ void Cipher::addPlaintext(){
         }
         else{
             row.push_back(el);
-            i = i+1;
+            i = i + 1;
         } 
+        id = id + 1; 
     }
 
-    if (row.size() == this->getKey().length()){
+    if (row.size() == len){
         this->addRow(row);
     }
-    else{
+    if (id != temp.length() || row.size() > 0){
         while (row.size() < this->getKey().length()){
             row.push_back("*");
         }
@@ -219,7 +229,6 @@ void Cipher::order(){
         }
         i = 0;
     }
-    cout << endl;
     this->addRow(row);
 }
 
@@ -238,6 +247,9 @@ void Cipher::blockify(){
             temp.append(" "); 
             i = 0; 
         }
+        if (this->getCiphertext()[index] == '*'){
+            i = i - 1;
+        }
         temp = temp + this->getCiphertext()[index];
         index = index + 1;
         i = i + 1;
@@ -246,6 +258,102 @@ void Cipher::blockify(){
     this->setCiphertext(temp); 
     cout << this->getCiphertext() << endl;
 
+}
+
+vector<vector<string>> Cipher::tempSetup(){
+
+    string temp = this->getPlaintext(); 
+    int len = this->getKey().length();
+    vector<vector<string>> temp_table;
+
+    temp_table.push_back(this->getTable()[0]);
+    temp_table.push_back(this->getTable()[1]);
+
+    vector<string> orow; 
+    this->rowInit(len, orow);
+    for (int ord = 1; ord <= len; ord++){
+        orow[ord-1] = to_string(ord); 
+    }
+    temp_table.push_back(orow);
+
+    temp.erase(remove(temp.begin(), temp.end(), ' '), temp.end());
+    temp.erase(remove(temp.begin(), temp.end(), '.'), temp.end());
+    this->setRows(temp.length() / this->getKey().length());
+    for (int i = 0; i < this->getRows(); i++){
+        vector<string> row; 
+        this->rowInit(len, row);
+        temp_table.push_back(row); 
+    }
+
+    return temp_table;
+}
+
+void Cipher::transpose(){
+    
+    int id = 0; 
+    int cid = 0; 
+    string temp = this->getPlaintext(); 
+    temp.erase(remove(temp.begin(), temp.end(), ' '), temp.end());
+    temp.erase(remove(temp.begin(), temp.end(), '.'), temp.end());
+
+    vector<vector<string>> temp_table;
+    temp_table = tempSetup();
+       
+    for (int j = 0; j < temp.length(); j++){
+        if (id == this->getRows()){
+            cid = cid + 1; 
+            id = 0; 
+        }
+        temp_table[id+3][cid] = temp[j];
+        id = id + 1; 
+    }
+
+    this->setTable(temp_table);       
+}
+
+void Cipher::decrypt(){
+
+    string temp ="";
+    vector <vector <string>> temp_table;
+    temp_table = this->getTable(); 
+
+    for (int i=0; i < this->getKey().length(); i++){
+
+        int row = 0;
+        int col = 0; 
+        string el = this->getTable()[2][i]; 
+        
+        for (int j=0; j <this->getKey().length(); j++){
+            
+            string elem = this->getTable()[1][j];
+
+            if (el == elem){
+                temp_table[2][col] = "0";
+                while (row < this->getRows()){
+                    temp_table[row+3][col] = this->getTable()[row+3][i];
+                    row = row + 1; 
+                }
+                row = 0;
+                col = 0;
+            }
+            else{
+                col = col + 1;
+            }
+        }
+    }
+
+    this->setTable(temp_table);
+    
+    for (int r = 0; r < this->getTable().size(); r++){
+        if (r > 2){
+            for (int l = 0; l < this->getKey().length(); l++){
+                temp.append(this->getTable()[r][l]);
+            }
+        }
+    }
+
+    cout << temp << endl;
+    cout << "Ciphertext decrypted." << endl;
 }
 
 /**
@@ -262,10 +370,8 @@ void Cipher::encrypt(){
     while (col < len){
         if (this->getTable()[1][col] == to_string(id)){
             for (row; row < depth; row++){
-                //cout << this->getTable()[row][col] << " "; 
                 temp.append(this->getTable()[row][col]); 
             }
-            //sleep(1);
             row = 2; 
             col = 0; 
             id = id + 1;
@@ -276,12 +382,12 @@ void Cipher::encrypt(){
     }
     
     temp.erase(remove(temp.begin(), temp.end(), ' '), temp.end());
-    temp.erase(remove(temp.begin(), temp.end(), '*'), temp.end());
+    //temp.erase(remove(temp.begin(), temp.end(), '*'), temp.end());
     this->setCiphertext(temp); 
 
     this->blockify();
 
-    cout << "Plaintext encrypted" << endl;
+    cout << "Plaintext encrypted." << endl;
 }
 
 /**
@@ -292,17 +398,5 @@ void Cipher::stage(){
     this->addKey();
     this->order();
     this->addPlaintext();
-    this->showTable();
-}
-
-/**
- * Provide a short description of the cipher being used.
- */
-void Cipher::describe(){
-    cout << "Description:\n";
-    cout << "This is the tranposition cipher method.\n";
-    cout << "For this iteration we will use the key:\n" + this->getKey() + "\n";
-    cout << "To encrypt this plaintext:\n" + this->getPlaintext() + "\n";
-    cout << "";
-    cout << "";
+    //this->showTable();
 }

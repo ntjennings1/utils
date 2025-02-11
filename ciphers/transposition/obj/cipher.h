@@ -35,6 +35,8 @@ class Cipher{
         void setCiphertext(string ctext);
         vector<vector<string>> getTable();
         void setTable(vector<vector<string>>& table);
+        int getRows();
+        void setRows(int rows);
         
         void rowInit(int len, vector<string>& row);
         void showTable(); 
@@ -42,16 +44,19 @@ class Cipher{
         void addKey();
         void addPlaintext();
         void addRow(vector<string>& row); 
-        void blockify();
-        void encrypt();
         void order();
+        void blockify();
+        vector<vector<string>> tempSetup();
+        void transpose();
+        void encrypt();
+        void decrypt();
         void stage();
-        void describe();
 
     /**
      * All private characteristics of the encryption algorithm.
      */
     private:
+        int rows = 0;
         string key = ""; 
         string ptext = "";
         string ctext = "";

@@ -9,19 +9,16 @@
 using namespace std;
 
 /**
- * Runs the cipher program.
+ * Runs the encryption algorithm.
  * 
  * @param argc The amount of available arguments.
  * @param argv A list of the available arguments.
  */
 int main(int argc, char* argv[])
 {
-   string key; 
-   string ptext;
 
    Cipher cipher(argv[1], argv[2]);
 
-   cipher.describe();
    cipher.stage();
    cipher.encrypt();
 
