@@ -10,24 +10,37 @@ This system will supply us with ciphertext that is not easily deciphered even wi
 
 ## Uses
 
-Running this simulation is simple. Enter the source directory of this encryption algorithm: 
+Running this simulation is simple. Enter the source directory of this cipher algorithm: 
 
 ```
 cd $UTILS_HOME\ciphers\transposition
 ```
 
-Then run the following command to compile the C++ code into an executable:
+### Encryption
+Run the following command to compile the C++ code into an executable:
 
 ```
-g++ .\main.cpp .\obj\cipher.cpp -o main.exe
+g++ .\encrypt.cpp .\obj\cipher.cpp -o encrypt.exe
 ```
 
 The run the executable. Be sure to enter your own key and plain text. Also, make sure they are surrounded by double quotes.
 
 ```
-.\main.exe "CIPHER_KEY" "PLAIN_TEXT"
+.\encrypt.exe "CIPHER_KEY" "PLAIN_TEXT"
 ```
 
+### Decryption
+Run the following command to compile the C++ code into an executable:
+
+```
+g++ .\decrypt.cpp .\obj\cipher.cpp -o decrypt.exe
+```
+
+The run the executable. Be sure to enter your own key and cipher text. Also, make sure they are surrounded by double quotes.
+
+```
+.\decrypt.exe "CIPHER_KEY" "CIPHER_TEXT"
+```
 
 ## Acknowledgements
 

@@ -56,9 +56,9 @@ class Cipher{
      * All private characteristics of the encryption algorithm.
      */
     private:
-        int rows = 0;
         string key = ""; 
         string ptext = "";
+        int rows = 0;
         string ctext = "";
         vector<vector<string>> table; 
 

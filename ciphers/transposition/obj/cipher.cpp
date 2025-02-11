@@ -88,10 +88,20 @@ void Cipher::setTable(vector<vector<string>>& table){
     this->table = table; 
 }
 
+/**
+ * Gets the number of rows.
+ * 
+ * @return rows The number of expected rows. 
+ */
 int Cipher::getRows(){
     return rows;
 }
 
+/**
+ * Sets the number of rows.
+ * 
+ * @param rows The number of expected rows. 
+ */
 void Cipher::setRows(int rows){
     this->rows = rows;
 }
@@ -125,7 +135,7 @@ void Cipher::showTable(){
 }
 
 /**
- * Show a specified row.
+ * Shows a specified row.
  * 
  * @param row A string vector with plaintext.
  */
@@ -138,7 +148,7 @@ void Cipher::showRow(vector<string>& row){
 }
 
 /**
- * Put the key into the table.
+ * Puts the key into the table.
  */
 void Cipher::addKey(){
 
@@ -153,7 +163,7 @@ void Cipher::addKey(){
 }
 
 /**
- * Put the plaintext into the table.
+ * Puts the plaintext into the table.
  */
 void Cipher::addPlaintext(){
 
@@ -193,7 +203,7 @@ void Cipher::addPlaintext(){
 }
 
 /**
- * Add a row to the table.
+ * Adds a row to the table.
  * 
  * @param row A vector of string vectors.  
  */
@@ -202,7 +212,7 @@ void Cipher::addRow(vector <string>& row){
 }
 
 /**
- * Find the order of characters in the key.
+ * Finds the order of characters in the key.
  */
 void Cipher::order(){
   
@@ -260,6 +270,11 @@ void Cipher::blockify(){
 
 }
 
+/**
+ * Creates a temporary table. 
+ * 
+ * @return temp_table A temporary vector of string vectors.
+ */
 vector<vector<string>> Cipher::tempSetup(){
 
     string temp = this->getPlaintext(); 
@@ -288,6 +303,9 @@ vector<vector<string>> Cipher::tempSetup(){
     return temp_table;
 }
 
+/**
+ * Transposes the ciphertext in the cipher table.
+ */
 void Cipher::transpose(){
     
     int id = 0; 
@@ -311,6 +329,9 @@ void Cipher::transpose(){
     this->setTable(temp_table);       
 }
 
+/**
+ * Decrypts the ciphertext using the key.
+ */
 void Cipher::decrypt(){
 
     string temp ="";
@@ -357,7 +378,7 @@ void Cipher::decrypt(){
 }
 
 /**
- * Encrypt the plaintext using the key.
+ * Encrypts the plaintext using the key.
  */
 void Cipher::encrypt(){
     int id = 1; 
@@ -391,7 +412,7 @@ void Cipher::encrypt(){
 }
 
 /**
- * Stage the cipher table.
+ * Stages the cipher table.
  */
 void Cipher::stage(){
 
