@@ -408,7 +408,6 @@ void Cipher::encrypt(){
 
     this->blockify();
 
-    cout << "Plaintext encrypted." << endl;
 }
 
 /**
