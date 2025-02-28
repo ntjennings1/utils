@@ -36,7 +36,7 @@ g++ .\decrypt.cpp .\obj\cipher.cpp -o decrypt.exe
 Then run the executable. Be sure to enter your own pattern, key and plain text. Also, make sure all input variables are surrounded by double quotes.
 
 ```
-.\decrypt.exe "PLAINTEXT" "CIPHER_KEY_1, CIPHER_KEY_2, ..., CIPHER_KEY_N "PATTERN_ITEM_1, PATTERN_ITEM_2, ..., PATTERN_ITEM_N"
+.\decrypt.exe "CIPHERTEXT" "CIPHER_KEY_1, CIPHER_KEY_2, ..., CIPHER_KEY_N "PATTERN_ITEM_1, PATTERN_ITEM_2, ..., PATTERN_ITEM_N"
 ```
 
 ## Acknowledgements
