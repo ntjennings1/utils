@@ -22,7 +22,7 @@ Cipher::Cipher(string key, string ptext)
  * @return key A string representing the cipher key. 
  */
 string Cipher::getKey(){
-    return key; 
+    return this->key; 
 }
 
 /**
@@ -40,7 +40,7 @@ void Cipher::setKey(string key){
  * @return ptext A string representing the plaintext.
  */
 string Cipher::getPlaintext(){
-    return ptext;
+    return this->ptext;
 }
 
 /**
@@ -58,7 +58,7 @@ void Cipher::setPlaintext(string ptext){
  * @return ctext A string representing the ciphertext.
  */
 string Cipher::getCiphertext(){
-    return ctext;
+    return this->ctext;
 }
 
 /**
@@ -76,7 +76,7 @@ void Cipher::setCiphertext(string ctext){
  * @return table A vector of string vectors describing the cipher table.
  */
 vector<vector<string>> Cipher::getTable(){
-    return table; 
+    return this->table; 
 }
 
 /**
@@ -94,7 +94,7 @@ void Cipher::setTable(vector<vector<string>>& table){
  * @return rows The number of expected rows. 
  */
 int Cipher::getRows(){
-    return rows;
+    return this->rows;
 }
 
 /**
@@ -205,7 +205,7 @@ void Cipher::addPlaintext(){
 /**
  * Adds a row to the table.
  * 
- * @param row A vector of string vectors.  
+ * @param row A string vector.  
  */
 void Cipher::addRow(vector <string>& row){
     table.push_back(row); 

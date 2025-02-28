@@ -1,6 +1,9 @@
 #ifndef CIPHER_H
 #define CIPHER_H
 
+/**
+ * All imports.
+ */
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,8 +11,18 @@
 
 using namespace std; 
 
+/**
+ * Implementation of the caesar cipher.
+ * 
+ * The Caesar cipher is an encryption algorithm that uses
+ * permutation, order, and patterns to encrypt/decrypt plaintext
+ * to ciphertext.
+ */
 class Cipher{
 
+    /**
+     * All public methods relevant to the encryption algorithm.
+     */
     public:
         Cipher(string ptext, string keys, string pattern);
         
@@ -35,6 +48,9 @@ class Cipher{
         void encrypt();
         void stage();
 
+    /**
+     * All private characteristics of the encryption algorithm.
+     */
     private:
         string ptext = "";
         vector<string> keys;

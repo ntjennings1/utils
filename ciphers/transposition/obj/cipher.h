@@ -14,10 +14,10 @@ using namespace std;
 
 
 /**
- * Implementation of the transposition cipher. 
+ * Implementation of the Transposition cipher. 
  * 
- * The transposition cipher is an encryption algorithm that uses 
- * permutation and order to encrypt plaintext to ciphertext. 
+ * The Transposition cipher is an encryption algorithm that uses 
+ * permutation and order to encrypt/decrypt plaintext to ciphertext. 
  * 
  */
 class Cipher{

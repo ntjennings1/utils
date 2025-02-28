@@ -1,5 +1,15 @@
+/**
+ * All imports.
+ */
 #include "cipher.h"
 
+/**
+ * Implementation of the caesar cipher.
+ * 
+ * The Caesar cipher is an encryption algorithm that uses
+ * permutation, order, and patterns to encrypt/decrypt plaintext
+ * to ciphertext.
+ */
 Cipher::Cipher(string ptext, string keys, string pattern)
 {
     grabKeys(keys);
@@ -7,61 +17,121 @@ Cipher::Cipher(string ptext, string keys, string pattern)
     this->ptext = ptext; 
 }
 
+/**
+ * Gets the cipher keys.
+ * 
+ * @return keys A string vector describing the cipher keys.
+ */
 vector<string> Cipher::getKeys()
 {
     return this->keys;
 }
 
+/**
+ * Sets the cipher keys.
+ * 
+ * @param keys A string vector describing the cipher keys.
+ */
 void Cipher::setKeys(vector<string> keys)
 {
     this->keys = keys; 
 }
 
+/**
+ * Gets the plaintext.
+ * 
+ * @return ptext A string representing the plaintext.
+ */
 string Cipher::getPlaintext()
 {
     return this->ptext;
 }
 
+/**
+ * Sets the plaintext.
+ * 
+ * @param ptext A string representing the plantext.
+ */
 void Cipher::setPlaintext(string ptext)
 {
     this->ptext = ptext;
 }
 
+/**
+ * Gets the cipher pattern.
+ * 
+ * @return patter A string vector describing the cipher pattern.
+ */
 vector<string> Cipher::getPattern()
 {
     return this->pattern;
 }
 
+/**
+ * Sets the cipher pattern.
+ * 
+ * @param pattern A string vector describing the cipher pattern.
+ */
 void Cipher::setPattern(vector<string> pattern)
 {
     this->pattern = pattern;
 }
 
+/**
+ * Gets the cipher table.
+ * 
+ * @return table A vector of string vectors describing the cipher table.
+ */
 vector<vector<string>> Cipher::getTable()
 {
     return this->table;
 }
 
+/**
+ * Sets the cipher table.
+ * 
+ * @param table A vector of string vectors describing the cipher table.
+ */
 void Cipher::setTable(vector<vector<string>> table)
 {
     this->table = table;
 }
 
+/**
+ * Gets the ciphertext.
+ * 
+ * @return ctext A string representing the ciphertext.
+ */
 string Cipher::getCiphertext()
 {
     return this->ctext;
 }
 
+/**
+ * Sets the ciphertext.
+ * 
+ * @param ctext A string representing the ciphertext.
+ */
 void Cipher::setCiphertext(string ctext)
 {
     this->ctext = ctext;
 }
 
+/**
+ * Adds a row to the table.
+ * 
+ * @param row A string vector.  
+ */
 void Cipher::addRow(vector<string>& row)
 {
     table.push_back(row);
 }
 
+/**
+ * Initializes a row.
+ * 
+ * @param row A string vector with plaintext.
+ */
 void Cipher::rowInit(vector<string>& row)
 {
     int len = this->getTable()[0].size(); 
@@ -72,6 +142,11 @@ void Cipher::rowInit(vector<string>& row)
     }
 }
 
+/**
+ * Seperates individual cipher keys from input.
+ * 
+ * @param keys An input string representing the keys.
+ */
 void Cipher::grabKeys(string keys)
 {
     vector<string> temp;
@@ -87,6 +162,11 @@ void Cipher::grabKeys(string keys)
     this->setKeys(temp);
 }
 
+/**
+ * Creates cipher pattern from input string.
+ * 
+ * @param pattern An input string representing the pattern.
+ */
 void Cipher::grabPattern(string pattern)
 {
     vector<string> temp;
@@ -102,6 +182,9 @@ void Cipher::grabPattern(string pattern)
     this->setPattern(temp);
 }
 
+/**
+ * Shows the cipher table.
+ */
 void Cipher::showTable()
 {
     for (const auto& row : this->getTable()){
@@ -112,6 +195,9 @@ void Cipher::showTable()
     }
 }
 
+/**
+ * Shifts cipher table rows based on the keys.
+ */
 void Cipher::makeShifts()
 {
     for (const auto& key : this->getKeys())
@@ -149,6 +235,9 @@ void Cipher::makeShifts()
     }
 }
 
+/**
+ * Initializes the cipher table.
+ */
 void Cipher::tableInit()
 {
     vector<string> chars = {
@@ -167,6 +256,9 @@ void Cipher::tableInit()
 
 }
 
+/**
+ * Decrypts the ciphertext using the pattern.
+ */
 void Cipher::decrypt()
 {
     int len = this->getPlaintext().size();
@@ -209,6 +301,9 @@ void Cipher::decrypt()
     cout << temp << endl;
 }
 
+/**
+ * Encrypts the plaintext using the pattern.
+ */
 void Cipher::encrypt()
 {
     int len = this->getPlaintext().size();
@@ -243,6 +338,9 @@ void Cipher::encrypt()
 
 }
 
+/**
+ * Stages the cipher table.
+ */
 void Cipher::stage()
 {   
     this->tableInit();
