@@ -20,10 +20,10 @@ Run the following command to compile the C++ code into an executable:
 g++ .\encrypt.cpp .\obj\cipher.cpp -o encrypt.exe
 ```
 
-Then run the executable. Be sure to enter your own pattern, key and plain text. Also, make sure all input variables are surrounded by double quotes.
+Then run the executable. Be sure to enter your pattern, key, and plain text. Also, make sure all input variables are surrounded by double quotes.
 
 ```
-encrypt.exe "PLAINTEXT" "CIPHER_KEY_1, CIPHER_KEY_2, ..., CIPHER_KEY_N "PATTERN_ITEM_1, PATTERN_ITEM_2, ..., PATTERN_ITEM_N"
+encrypt.exe "PLAINTEXT" "CIPHER_KEY_1, CIPHER_KEY_2, ..., CIPHER_KEY_N" "PATTERN_ITEM_1, PATTERN_ITEM_2, ..., PATTERN_ITEM_N"
 ```
 
 ### Decryption
@@ -33,10 +33,10 @@ Run the following command to compile the C++ code into an executable:
 g++ .\decrypt.cpp .\obj\cipher.cpp -o decrypt.exe
 ```
 
-Then run the executable. Be sure to enter your own pattern, key and plain text. Also, make sure all input variables are surrounded by double quotes.
+Then run the executable. Be sure to enter your pattern, key, and plain text. Also, make sure all input variables are surrounded by double quotes.
 
 ```
-.\decrypt.exe "CIPHERTEXT" "CIPHER_KEY_1, CIPHER_KEY_2, ..., CIPHER_KEY_N "PATTERN_ITEM_1, PATTERN_ITEM_2, ..., PATTERN_ITEM_N"
+.\decrypt.exe "CIPHERTEXT" "CIPHER_KEY_1, CIPHER_KEY_2, ..., CIPHER_KEY_N" "PATTERN_ITEM_1, PATTERN_ITEM_2, ..., PATTERN_ITEM_N"
 ```
 
 ## Acknowledgements
