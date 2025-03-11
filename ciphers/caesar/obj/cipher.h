@@ -35,7 +35,7 @@ class Cipher{
         string getCiphertext();
         void setCiphertext(string ctext);
         vector<vector<string>> getTable();
-        void setTable(vector<vector<string>> table);
+        void setTable(vector<vector<string>>& table);
 
         void rowInit(vector<string>& row);
         void addRow(vector<string>& row);
