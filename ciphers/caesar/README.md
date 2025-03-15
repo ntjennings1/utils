@@ -4,7 +4,7 @@ This utility is used to simulate the Caesar cipher.
 ## About
 The Caesar cipher is an encryption method which works to conceal message identity by substituting the characters in the message for other characters. This is implemented through a regular system, with a key and pattern, to produce an encoded message that alters the state of the plaintext units. Also known as the Shift cipher, the Caesar Cipher simply alters plaintext units and not the position of the units.
 
-Here we will study the implementation of the Caesar Cipher. By shifting the characters in the alphabet (according to a list of integer keys) one can create altered alphabets. Given multiple keys, the pattern (a list of integers representing which key to use iteratively) can map ciphertext units by grabbing the character at the position of each plaintext unit in the corresponding altered alphabet. 
+Here we will study the implementation of the Caesar cipher. By shifting the characters in the alphabet (according to a list of integer keys) one can create altered alphabets. Given multiple keys, the pattern (a list of integers representing which key to use iteratively) can map ciphertext units by grabbing the character at the position of each plaintext unit in the corresponding altered alphabet. 
 
 ## Uses
 Running this simulation is simple. Enter the source directory of this cipher algorithm: 

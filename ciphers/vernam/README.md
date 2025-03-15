@@ -2,7 +2,13 @@
 This utility is used to simulate the Vernam cipher.
 
 ## About
+The Vernam cipher is an encryption algorithm that works to conceal message 
+identity by substituting the characters in the message for other 
+characters. This is implemented through a regular system, with a key, to produce an encoded message that alters the state of the plaintext units. 
+Created by Gilbert Sandford Vernam, the Vernam cipher simply alters the plaintext units and not the position of the units.
 
+Here we will study the implementation of the Vernam cipher. By finding  
+a binary representation of a character in the text and the key, then calculating the exclusive-OR (XOR) between them, one can find a substitute character for the ciphertext. Apply this to all characters in the plaintext and key in order to find the entire encrypted message.
 
 ## Uses
 Running this simulation is simple. Enter the source directory of this cipher algorithm: 
