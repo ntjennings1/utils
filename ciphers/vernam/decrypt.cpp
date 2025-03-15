@@ -7,8 +7,8 @@ int main(int argc, char* argv[])
 {
     Cipher cipher(argv[1], argv[2]);
 
-    //cipher.stage();
-    //cipher.decrypt();
+    cipher.eval();
+    cipher.decrypt();
 
     sleep(1);
 

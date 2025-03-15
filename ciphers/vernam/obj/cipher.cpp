@@ -113,6 +113,8 @@ string Cipher::findBinary(char& input)
     }
 
     reverse(out.begin(), out.end());
+    cout << "Char: " << input << endl;
+    cout << "Binary: " << out << endl;
     return out;
 
 }
@@ -157,13 +159,15 @@ string Cipher::findString(string& input)
 
     }
 
-    if (sum > 26)
-    {
-        sum = sum - 26;
-    }
+    cout << sum << endl;
+    //if (sum >= 26)
+    //{
+    //    sum = sum - 26;
+    //}
     
     sum = sum + 65;
     c = c + static_cast<char>(sum);
+    cout << "Character: " << c << endl;
     return c;
 }
 
@@ -186,6 +190,7 @@ string Cipher::exor(string one, string two, int i)
         }
     }
     
+    cout << "XOR: " << out << endl << endl;
     return out;
 }
 
@@ -193,7 +198,15 @@ void Cipher::decrypt()
 {
     string out = "";
 
-    
+    for (int i = 0; i < this->getTable()[0].size(); i ++)
+    {
+        string temp = "";
+        temp = this->exor(this->getPlaintext(), this->getKey(), i);
+        out = out + findString(temp);
+    }
+
+    this->setCiphertext(out);
+    cout << this->getCiphertext();
 
 }
 
