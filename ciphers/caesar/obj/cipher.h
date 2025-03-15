@@ -12,11 +12,10 @@
 using namespace std; 
 
 /**
- * Implementation of the caesar cipher.
+ * Implementation of the Caesar cipher.
  * 
  * The Caesar cipher is an encryption algorithm that uses
- * permutation, order, and patterns to encrypt/decrypt plaintext
- * to ciphertext.
+ * permutation, order, and patterns to encrypt/decrypt text.
  */
 class Cipher{
 

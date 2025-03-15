@@ -1,6 +1,9 @@
 #ifndef CIPHER_H
 #define CIPHER_H
 
+/**
+ * All imports.
+*/
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,9 +12,19 @@
 
 using namespace std;
 
+/**
+ * Implementation of the Vernam cipher.
+ * 
+ * The Vernam cipher is an encryption algorithm that uses
+ * substitution, and the binary XOR to encrypt/decrypt text.
+ */
 class Cipher{
+    /**
+     * All public methods relevant to the encryption algorithm.
+     */
     public:
         Cipher(string ptext, string key);
+
         string getPlaintext();
         void setPlaintext(string ptext);
         string getKey();
@@ -32,6 +45,10 @@ class Cipher{
         void encrypt();
         void stage();
         void eval();
+
+    /**
+     * All private characteristics of the encryption algorithm.
+     */
     private:
         string ptext = "";
         string key = "";

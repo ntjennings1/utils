@@ -17,7 +17,7 @@ using namespace std;
  * Implementation of the Transposition cipher. 
  * 
  * The Transposition cipher is an encryption algorithm that uses 
- * permutation and order to encrypt/decrypt plaintext to ciphertext. 
+ * permutation and order to encrypt/decrypt text.
  * 
  */
 class Cipher{

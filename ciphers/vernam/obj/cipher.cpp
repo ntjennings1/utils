@@ -1,56 +1,113 @@
+/**
+ * All imports.
+ */
 #include "cipher.h"
 
+/**
+ * Implementation of the Vernam cipher.
+ * 
+ * The Vernam cipher is an encryption algorithm that uses
+ * substitution, and the binary XOR to encrypt/decrypt text.
+ */
 Cipher::Cipher(string ptext, string key)
 {
     this->ptext = ptext;
     this->key = key; 
 }
 
+/**
+ * Gets the plaintext.
+ * 
+ * @return ptext A string representing the plaintext.
+ */
 string Cipher::getPlaintext()
 {
     return this->ptext;
 }
 
+/**
+ * Sets the plaintext.
+ * 
+ * @param ptext A string representing the plaintext.
+ */
 void Cipher::setPlaintext(string ptext)
 {
     this->ptext = ptext;
 }
 
+/**
+ * Gets the cipher key.
+ * 
+ * @return key A string representing the cipher key.
+ */
 string Cipher::getKey()
 {
     return this->key;
 }
 
+/**
+ * Sets the cipher key.
+ * 
+ * @param key A string representing the cipher key.
+ */
 void Cipher::setKey(string key)
 {
     this->key = key;
 }
 
+/**
+ * Gets the cipher table.
+ * 
+ * @return table A vector of string vectors used to represent the cipher table.
+ */
 vector<vector<string>> Cipher::getTable()
 {
     return this->table;
 }
 
+/**
+ * Sets the ciphertable.
+ * 
+ * @param table A vector of string vectors used to represent the cipher table.
+ */
 void Cipher::setTable(vector<vector<string>>& table)
 {
     this->table = table;
 }
 
+/**
+ * Gets the ciphertext.
+ * 
+ * @return ctext A string representing the ciphertext.
+ */
 string Cipher::getCiphertext()
 {
     return this->ctext;
 }
 
+/**
+ * Sets the ciphertext.
+ * 
+ * @param ctext A string representing the ciphertext.
+ */
 void Cipher::setCiphertext(string ctext)
 {
     this->ctext = ctext;
 }
 
+/**
+ * Adds a row to the table.
+ * 
+ * @param row A string vector.  
+ */
 void Cipher::addRow(vector<string>& row)
 {
     table.push_back(row);
 }
 
+/**
+ * Initializes the cipher table.
+ */
 void Cipher::tableInit()
 {
     vector<string> prow;
@@ -76,6 +133,9 @@ void Cipher::tableInit()
 
 }
 
+/**
+ * Shows the cipher table.
+ */
 void Cipher::showTable()
 {
     for (const auto& row : this->getTable()){
@@ -86,6 +146,11 @@ void Cipher::showTable()
     }
 }
 
+/**
+ * Calculates the binary representation of some input.
+ * 
+ * @param input A character to be converted to binary.
+ */
 string Cipher::findBinary(char& input)
 {
     string out = ""; 
@@ -113,12 +178,15 @@ string Cipher::findBinary(char& input)
     }
 
     reverse(out.begin(), out.end());
-    cout << "Char: " << input << endl;
-    cout << "Binary: " << out << endl;
     return out;
 
 }
 
+/**
+ * Converts some binary representation to string.
+ * 
+ * @param input A binary representation.
+ */
 string Cipher::findString(string& input)
 {
     string c;
@@ -158,19 +226,19 @@ string Cipher::findString(string& input)
         }
 
     }
-
-    cout << sum << endl;
-    //if (sum >= 26)
-    //{
-    //    sum = sum - 26;
-    //}
     
     sum = sum + 65;
     c = c + static_cast<char>(sum);
-    cout << "Character: " << c << endl;
     return c;
 }
 
+/**
+ * Finds the exclusive-OR between two strings.
+ * 
+ * @param one A string representing the plaintext/ciphertext.
+ * @param two A string rperesenting the key.
+ * @param i A integer representing a position.
+ */
 string Cipher::exor(string one, string two, int i)
 {
     string out = "";
@@ -190,10 +258,12 @@ string Cipher::exor(string one, string two, int i)
         }
     }
     
-    cout << "XOR: " << out << endl << endl;
     return out;
 }
 
+/**
+ * Decrypts the ciphertext using the key.
+ */
 void Cipher::decrypt()
 {
     string out = "";
@@ -210,6 +280,9 @@ void Cipher::decrypt()
 
 }
 
+/**
+ * Encrypts the plaintext using the pattern.
+ */
 void Cipher::encrypt()
 {
     string out = "";
@@ -226,12 +299,18 @@ void Cipher::encrypt()
     
 }
 
+/**
+ * Stages the cipher table.
+ */
 void Cipher::stage()
 {
     this->tableInit();
     //this->showTable();
 }
 
+/**
+ * Evaluates the length of the plaintext/ciphertext and the key.
+ */
 void Cipher::eval()
 {
     if (this->getPlaintext().size() == this->getKey().size())
