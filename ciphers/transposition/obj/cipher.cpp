@@ -373,8 +373,8 @@ void Cipher::decrypt(){
         }
     }
 
-    cout << temp << endl;
-    cout << "Ciphertext decrypted." << endl;
+    this->setCiphertext(temp);
+    cout << this->getCiphertext() << endl;
 }
 
 /**

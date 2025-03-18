@@ -92,7 +92,7 @@ vector<vector<string>> Cipher::getTable()
  * 
  * @param table A vector of string vectors describing the cipher table.
  */
-void Cipher::setTable(vector<vector<string>> table)
+void Cipher::setTable(vector<vector<string>>& table)
 {
     this->table = table;
 }
