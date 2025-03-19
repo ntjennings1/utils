@@ -1,4 +1,4 @@
-# Power
+# State
 
 These scripts can be used to manipulate your machines state and power options.
 

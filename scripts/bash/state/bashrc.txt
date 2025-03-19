@@ -1,0 +1,43 @@
+function off()
+{
+    sudo shutdown now
+}
+
+function reboot()
+{
+    sudo reboot
+}
+
+function update()
+{
+    if ping google.com -c 1 &> /dev/null; then
+        sudo apt-get update -y
+    else
+        echo Connect to the Internet
+    fi
+}
+
+function upgrade()
+{
+    if ping google.com -c 1 &> /dev/null; then
+        sudo apt-get upgrade -y 
+    else
+        echo Connect to the Internet
+    fi
+}
+
+function wlanover()
+{
+    sudo ifconfig wlan0 down
+    sudo ifconfig wlan0 up
+}
+
+function wpa()
+{
+    sudo rfkill unblock wifi
+    sudo rm /var/run/wpa_supplicant/wlan0
+    sudo killall wpa_supplicant
+    sudo wpa_supplicant -B -D nl80211 -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+}
+
+wpa &> /dev/null
