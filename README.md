@@ -1,16 +1,16 @@
 # Utils
 
-Utility scripts created for machines on the TC Network.
+Utilities created for machines on the TC Network.
 
 ## Tools
 
 This repository will have a collection of useful tools that relate to the following topics:
 
-1. Network analysis 
-2. System analysis 
-3. Program testing
-4. General automation 
-
+1. Network manipulation
+2. System manipulation
+3. Encryption
+4. General automation
+5. Program testing
 
 ## Acknowledgements
 
