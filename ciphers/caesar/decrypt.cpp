@@ -19,7 +19,5 @@ int main(int argc, char* argv[])
     cipher.stage();
     cipher.decrypt();
 
-    sleep(1);
-
     return 0;
 }

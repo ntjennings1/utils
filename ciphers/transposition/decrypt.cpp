@@ -23,8 +23,6 @@ int main(int argc, char* argv[])
    cipher.transpose();
    cipher.decrypt();
 
-   sleep(1);
-
    return 0;  
 
 }

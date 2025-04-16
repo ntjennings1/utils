@@ -22,8 +22,6 @@ int main(int argc, char* argv[])
    cipher.stage();
    cipher.encrypt();
 
-   sleep(1);
-
    return 0;  
 
 }
