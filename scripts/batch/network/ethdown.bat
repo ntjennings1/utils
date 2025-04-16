@@ -1,5 +1,5 @@
 Rem Attempts to disable the Ethernet interface.
-:netcheck
+:ethdown
 	@echo OFF
 
 	cls

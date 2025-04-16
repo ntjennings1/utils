@@ -1,6 +1,9 @@
 #ifndef CIPHER_H
 #define CIPHER_H
 
+/**
+ * All imports.
+ */
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,8 +11,18 @@
 
 using namespace std;
 
+/**
+ * Implementation of the Vigenere cipher. 
+ * 
+ * The Vigenere cipher is an encryption algorithm that uses 
+ * polyalphabetic substitution to encrypt/decrypt text.
+ * 
+ */
 class Cipher{
 
+    /**
+     * All public methods relevant to the encryption algorithm.
+     */
     public:
         Cipher(string ptext, string key); 
 
@@ -34,7 +47,9 @@ class Cipher{
         void stage();
         void eval();
 
-
+    /**
+     * All private characteristics of the encryption algorithm.
+     */
     private:
         string ptext = "";
         string key = "";

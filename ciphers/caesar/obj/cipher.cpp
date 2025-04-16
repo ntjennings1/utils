@@ -7,34 +7,13 @@
  * Implementation of the caesar cipher.
  * 
  * The Caesar cipher is an encryption algorithm that uses
- * permutation, order, and patterns to encrypt/decrypt plaintext
- * to ciphertext.
+ * permutation, order, and patterns to encrypt/decrypt text.
  */
 Cipher::Cipher(string ptext, string keys, string pattern)
 {
     grabKeys(keys);
     grabPattern(pattern);
     this->ptext = ptext; 
-}
-
-/**
- * Gets the cipher keys.
- * 
- * @return keys A string vector describing the cipher keys.
- */
-vector<string> Cipher::getKeys()
-{
-    return this->keys;
-}
-
-/**
- * Sets the cipher keys.
- * 
- * @param keys A string vector describing the cipher keys.
- */
-void Cipher::setKeys(vector<string> keys)
-{
-    this->keys = keys; 
 }
 
 /**
@@ -55,6 +34,26 @@ string Cipher::getPlaintext()
 void Cipher::setPlaintext(string ptext)
 {
     this->ptext = ptext;
+}
+
+/**
+ * Gets the cipher keys.
+ * 
+ * @return keys A string vector describing the cipher keys.
+ */
+vector<string> Cipher::getKeys()
+{
+    return this->keys;
+}
+
+/**
+ * Sets the cipher keys.
+ * 
+ * @param keys A string vector describing the cipher keys.
+ */
+void Cipher::setKeys(vector<string> keys)
+{
+    this->keys = keys; 
 }
 
 /**

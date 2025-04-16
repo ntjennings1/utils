@@ -1,5 +1,5 @@
 Rem Attempts to enable the Ethernet interface.
-:netcheck
+:ethup
 	@echo OFF
 
 	cls

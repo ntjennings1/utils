@@ -1,5 +1,5 @@
 Rem Attempts to disconnect from a Wireless Access Point.
-:netcheck
+:wlandiscon
 	@echo OFF
 
 	cls

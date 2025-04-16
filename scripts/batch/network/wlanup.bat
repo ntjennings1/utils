@@ -1,5 +1,5 @@
 Rem Attempts to enable the Wi-Fi interface.
-:netcheck
+:wlanup
 	@echo OFF
 
 	cls

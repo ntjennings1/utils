@@ -1,5 +1,5 @@
 Rem Attempts to connect to a Wireless Access Point.
-:netcheck
+:wlancon
 	@echo OFF
 
 	cls

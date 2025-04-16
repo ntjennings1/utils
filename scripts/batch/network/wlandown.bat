@@ -1,5 +1,5 @@
 Rem Attempts to disable the Wi-Fi interface.
-:netcheck
+:wlandown
 	@echo OFF
 
 	cls

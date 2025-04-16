@@ -7,7 +7,7 @@
  * Implementation of the transposition cipher. 
  * 
  * The transposition cipher is an encryption algorithm that uses 
- * permutation and order to encrypt plaintext to ciphertext. 
+ * permutation and order to encrypt/decrypt text. 
  * 
  */
 Cipher::Cipher(string key, string ptext)
