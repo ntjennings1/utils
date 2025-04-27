@@ -197,7 +197,6 @@ void Cipher::fixKey()
         i = i + 1;
     }
     this->setKey(temp);
-
 }
 
 /**
@@ -205,6 +204,8 @@ void Cipher::fixKey()
  */
 void Cipher::decrypt()
 {
+    string otemp = "";
+
     for (int i = 0; i < this->getPlaintext().size(); i ++)
     {
         string ptemp = "";
@@ -220,12 +221,14 @@ void Cipher::decrypt()
                 {
                     if (this->getTable()[j][h] == ptemp)
                     {
-                        cout << this->getTable()[0][h]; 
+                        otemp = otemp + this->getTable()[0][h]; 
                     }
                 }
             }
         }
     }
+
+    cout << otemp;
 }
 
 /**
@@ -233,6 +236,8 @@ void Cipher::decrypt()
  */
 void Cipher::encrypt()
 {
+    string otemp = "";
+
     for (int i = 0; i < this->getPlaintext().size(); i ++)
     {
         string ptemp = "";
@@ -248,12 +253,15 @@ void Cipher::encrypt()
                 {
                     if (this->getTable()[0][h] == ktemp)
                     {
-                        cout << this->getTable()[j][h]; 
+                        otemp = otemp + this->getTable()[j][h];
                     }
                 }
             }
         }
     }
+
+    this->setCiphertext(otemp);
+    cout << this->getCiphertext();
 }
 
 /**
@@ -262,7 +270,7 @@ void Cipher::encrypt()
 void Cipher::stage()
 {
     this->tableInit();
-    this->showTable();
+    //this->showTable();
 
 }
 
@@ -282,6 +290,6 @@ void Cipher::eval()
     else
     {
         cout << "Key length must be <= to the plaintext length.";
+        exit(0);
     }
-    cout << this->getKey() << endl;
 }
