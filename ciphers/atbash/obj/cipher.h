@@ -1,6 +1,9 @@
 #ifndef CIPHER_H
 #define CIPHER_H
 
+/**
+ * All imports.
+ */
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,8 +11,18 @@
 
 using namespace std;
 
+/**
+ * Implementation of the Atbash cipher. 
+ * 
+ * The Atbash cipher is an encryption algorithm that uses 
+ * monoalphabetic substitution to encrypt/decrypt text.
+ * 
+ */
 class Cipher{
 
+    /**
+     * All public methods relevant to the encryption algorithm.
+     */
     public:
         Cipher(string ptext);
 
@@ -24,12 +37,14 @@ class Cipher{
         void rowInit(vector<string>& row);
         void addRow(vector<string>& row);
         void showTable();
-        vector<string> makeShifts(vector<string>& row);
 
         void decrypt();
         void encrypt();
         void stage();
 
+    /**
+     * All private characteristics of the encryption algorithm.
+     */
     private:
         string ptext = "";
         vector<vector<string>> table;

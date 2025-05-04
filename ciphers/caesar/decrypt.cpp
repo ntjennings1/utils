@@ -7,7 +7,7 @@
 using namespace std;
 
 /**
- * Runs the encryption algorithm.
+ * Runs the decryption algorithm.
  * 
  * @param argc The amount of available arguments.
  * @param argv A list of the available arguments.

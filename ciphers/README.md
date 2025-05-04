@@ -20,6 +20,22 @@ This repository will have the following encryption algorithms:
 3. Vernam cipher
 4. Vigenere cipher
 
+## Cipher Features
+
+The encryption algorithms in this repository will have the following features:
+
+### 1. Plaintext Validation
+- This feature only accepts plaintext containing specific characters.
+- NO SPACES 
+
+### 2. Cipher key validation
+- This feature only accepts cipher keys containing specific characters.
+- NO SPACES 
+
+### 3. Output stream
+- This feature returns the plaintext/ciphertext on the console.
+- NO SPACES
+
 ## Acknowledgements
 
     Noah Jennings 
