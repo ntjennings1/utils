@@ -11,6 +11,14 @@ consist of shifted alphabetic letters and incrementally comparing key/plaintext 
 position in the table, one can find a substitute character for the ciphertext. Apply this to
 all characters in the plaintext and key in order to find the entire encrypted message.
 
+## Cipher Features
+
+The encryption algorithms in this repository will have the following features:
+
+1. Plaintext Validation
+2. Cipher key validation
+3. Output stream
+
 ## Uses
 Running this simulation is simple. Enter the source directory of this cipher algorithm: 
 
