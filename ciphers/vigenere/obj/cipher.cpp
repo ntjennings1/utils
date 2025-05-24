@@ -6,7 +6,7 @@
 /**
  * Implementation of the Vigenere cipher.
  * 
- * The Caesar cipher is an encryption algorithm that uses
+ * The Vigenere cipher is an encryption algorithm that uses
  * polyalphabetic substitution to encrypt/decrypt text.
  */
 Cipher::Cipher(string ptext, string key)
@@ -38,7 +38,7 @@ void Cipher::setPlaintext(string ptext)
 /**
  * Gets the cipher keys.
  * 
- * @return keys A string vector describing the cipher keys.
+ * @return keys A string vector representing the cipher keys.
  */
 string Cipher::getKey()
 {
@@ -48,7 +48,7 @@ string Cipher::getKey()
 /**
  * Sets the cipher keys.
  * 
- * @param keys A string vector describing the cipher keys.
+ * @param keys A string vector representing the cipher keys.
  */
 void Cipher::setKey(string key)
 {
@@ -78,7 +78,7 @@ void Cipher::setCiphertext(string ctext)
 /**
  * Gets the cipher table.
  * 
- * @return table A vector of string vectors describing the cipher table.
+ * @return table A vector of string vectors representing the cipher table.
  */
 vector<vector<string>> Cipher::getTable()
 {
@@ -88,7 +88,7 @@ vector<vector<string>> Cipher::getTable()
 /**
  * Sets the cipher table.
  * 
- * @param table A vector of string vectors describing the cipher table.
+ * @param table A vector of string vectors representing the cipher table.
  */
 void Cipher::setTable(vector<vector<string>> table)
 {
@@ -97,6 +97,8 @@ void Cipher::setTable(vector<vector<string>> table)
 
 /**
  * Initializes the cipher table.
+ * 
+ * @return null
  */
 void Cipher::tableInit()
 {
@@ -120,7 +122,7 @@ void Cipher::tableInit()
 /**
  * Adds a row to the table.
  * 
- * @param row A string vector.  
+ * @param row A string vector representing a row.  
  */
 void Cipher::addRow(vector<string>& row)
 {
@@ -144,6 +146,8 @@ void Cipher::rowInit(vector<string>& row)
 
 /**
  * Shows the cipher table.
+ * 
+ * @return null
  */
 void Cipher::showTable()
 {
@@ -157,6 +161,9 @@ void Cipher::showTable()
 
 /**
  * Shifts cipher table rows based on the previous entry.
+ * 
+ * @param row A string vector representing a row.
+ * @return temp A string vector representing a shifted row.
  */
 vector<string> Cipher::makeShifts(vector<string>& row)
 {
@@ -180,6 +187,8 @@ vector<string> Cipher::makeShifts(vector<string>& row)
 
 /**
  * Fixes the cipher key to math the length of the plaintext.
+ * 
+ * @return null
  */
 void Cipher::fixKey()
 {
@@ -201,6 +210,8 @@ void Cipher::fixKey()
 
 /**
  * Decrypts the ciphertext using the key.
+ * 
+ * @return null
  */
 void Cipher::decrypt()
 {
@@ -233,6 +244,8 @@ void Cipher::decrypt()
 
 /**
  * Encrypts the plaintext using the key.
+ * 
+ * @return null
  */
 void Cipher::encrypt()
 {
@@ -266,6 +279,8 @@ void Cipher::encrypt()
 
 /**
  * Stages the cipher table.
+ * 
+ * @return null
  */
 void Cipher::stage()
 {
@@ -275,7 +290,9 @@ void Cipher::stage()
 }
 
 /**
- * Evaluates the lengths of the cipher key and plaintext.
+ * Evaluates the cipher key and plaintext.
+ * 
+ * @return null
  */
 void Cipher::eval()
 {

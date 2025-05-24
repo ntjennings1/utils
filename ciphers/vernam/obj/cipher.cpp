@@ -107,6 +107,8 @@ void Cipher::addRow(vector<string>& row)
 
 /**
  * Initializes the cipher table.
+ * 
+ * @return null
  */
 void Cipher::tableInit()
 {
@@ -135,6 +137,8 @@ void Cipher::tableInit()
 
 /**
  * Shows the cipher table.
+ * 
+ * @return null
  */
 void Cipher::showTable()
 {
@@ -185,7 +189,8 @@ string Cipher::findBinary(char& input)
 /**
  * Converts some binary representation to string.
  * 
- * @param input A binary representation.
+ * @param input A string representing a binary number.
+ * @return c A string representing an alphabetic character.
  */
 string Cipher::findString(string& input)
 {
@@ -238,6 +243,7 @@ string Cipher::findString(string& input)
  * @param one A string representing the plaintext/ciphertext.
  * @param two A string rperesenting the key.
  * @param i A integer representing a position.
+ * @return out A string representing the XOR between two binary numbers.
  */
 string Cipher::exor(string one, string two, int i)
 {
@@ -263,6 +269,8 @@ string Cipher::exor(string one, string two, int i)
 
 /**
  * Decrypts the ciphertext using the key.
+ * 
+ * @return null
  */
 void Cipher::decrypt()
 {
@@ -282,6 +290,8 @@ void Cipher::decrypt()
 
 /**
  * Encrypts the plaintext using the pattern.
+ * 
+ * @return null
  */
 void Cipher::encrypt()
 {
@@ -301,6 +311,8 @@ void Cipher::encrypt()
 
 /**
  * Stages the cipher table.
+ * 
+ * @return null
  */
 void Cipher::stage()
 {
@@ -310,6 +322,8 @@ void Cipher::stage()
 
 /**
  * Evaluates the length of the plaintext/ciphertext and the key.
+ * 
+ * @return null
  */
 void Cipher::eval()
 {

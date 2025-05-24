@@ -1,71 +1,146 @@
+/**
+ * All imports.
+ */
 #include "cipher.h"
 
+/**
+ * Implementation of the Hill cipher.
+ * 
+ * The Hill cipher is an encryption algorithm that uses
+ * polyalphabetic substitution and linear algebra to
+ * encrypt/decrypt text.
+ */
 Cipher::Cipher(string ptext, string key)
 {
     this->ptext = ptext;
     this->key = key;
 }
 
+/**
+ * Gets the plaintext.
+ * 
+ * @return ptext A string representing the plaintext.
+ */
 string Cipher::getPlaintext()
 {
     return this->ptext;
 }
 
+/**
+ * Sets the plaintext.
+ * 
+ * @param ptext A string representing the plantext.
+ */
 void Cipher::setPlaintext(string ptext)
 {
     this->ptext = ptext;
 }
 
+/**
+ * Gets the plaintext matrix.
+ * 
+ * @return ptmat A vector of string vectors representing the plaintext.
+ */
 vector<vector<string>> Cipher::getPTMat()
 {
     return this->ptmat;
 }
 
+/**
+ * Sets the plaintext matrix.
+ * 
+ * @param ptmat A vector of string vectors representing the plaintext.
+ */
 void Cipher::setPTMat(vector<vector<string>>& ptmat)
 {
     this->ptmat = ptmat;
 }
 
+/**
+ * Gets the cipher key.
+ * 
+ * @return key A string representing the cipher key.
+ */
 string Cipher::getKey()
 {
     return this->key;
 }
 
+/**
+ * Sets the cipher key.
+ * 
+ * @param key A string representing the cipher key.
+ */
 void Cipher::setKey(string key)
 {
     this->key = key;
 }
 
+/**
+ * Gets the key matrix.
+ * 
+ * @return kmat A vector of string vectors representing the key.
+ */
 vector<vector<string>> Cipher::getKMat()
 {
     return this->kmat;
 }
 
+/**
+ * Sets the key matrix.
+ * 
+ * @param kmat A vector of string vectors representing the key.
+ */
 void Cipher::setKMat(vector<vector<string>>& kmat)
 {
     this->kmat = kmat;
 }
 
+/**
+ * Gets the ciphertext.
+ * 
+ * @return ctext A string representing the ciphertext.
+ */
 string Cipher::getCiphertext()
 {
     return this->ctext;
 }
 
+/**
+ * Sets the ciphertext.
+ * 
+ * @param ctext A string representing the ciphertext.
+ */
 void Cipher::setCiphertext(string ctext)
 {
     this->ctext = ctext;
 }
 
+/**
+ * Gets the cipher table.
+ * 
+ * @return table A vector of string vectors representing the table.
+ */
 vector<vector<string>>& Cipher::getTable()
 {
     return this->table;
 }
 
+/**
+ * Sets the cipher table.
+ * 
+ * @param table A vector of string vectors representing the table.
+ */
 void Cipher::setTable(vector<vector<string>> table)
 {
     this->table = table;
 }
 
+/**
+ * Initializes the cipher table.
+ * 
+ * @return null
+ */
 void Cipher::tableInit()
 {
     vector<string> chars = {
@@ -85,11 +160,21 @@ void Cipher::tableInit()
     this->addRow(order);
 }
 
+/**
+ * Adds a row to the table.
+ * 
+ * @param row A string vector representing a row.  
+ */
 void Cipher::addRow(vector<string>& row)
 {
     table.push_back(row);
 }
 
+/**
+* Shows the cipher table.
+* 
+* @return null
+*/
 void Cipher::showTable()
 {
     for (const auto& row : this->getTable()){
@@ -100,6 +185,13 @@ void Cipher::showTable()
     }
 }
 
+/**
+ * Matricizes vectors.
+ * 
+ * @param vec A string vector representing some vector.
+ * @param indicator A string representing the type of vector being passed.
+ * @return mtemp A vector of string vectors representing a temporary matrix.
+ */
 vector<vector<string>> Cipher::matricize(vector<string> vec, string indicator)
 {
     vector<string> rtemp;
@@ -160,6 +252,13 @@ vector<vector<string>> Cipher::invert(vector<string> mat)
 
 }
 
+/**
+ * Performs matrix multiplication.
+ * 
+ * @param mat A vector of string vectors representing some matrix.
+ * @param vec A string vector representing some vector.
+ * @return otemp A vector of string vectors representing a temporary output matrix.
+ */
 vector<vector<string>> Cipher::mult(vector<vector<string>> mat, vector<vector<string>> vec)
 {
     vector<vector<string>> otemp;
@@ -190,6 +289,11 @@ void Cipher::decrypt()
 
 }
 
+/**
+ * Encrypts the plaintext using the key.
+ * 
+ * @return null
+ */
 void Cipher::encrypt()
 {
     string ctemp = "";
@@ -227,6 +331,12 @@ void Cipher::encrypt()
     cout << this->getCiphertext() << endl;
 }
 
+/**
+ * Locates characters in the cipher table.
+ * 
+ * @param indicator A string representing the locating scheme.
+ * @return otemp A string vector representing a temporary output vector.
+ */
 vector<string> Cipher::locate(string indicator)
 {
     vector<string> otemp;
@@ -278,6 +388,11 @@ vector<string> Cipher::locate(string indicator)
     return otemp;
 }
 
+/**
+ * Stages the cipher table.
+ * 
+ * @return null
+ */
 void Cipher::stage()
 {
     this->tableInit();
@@ -293,6 +408,11 @@ void Cipher::stage()
     this->setKMat(tktemp);
 }
 
+/**
+ * Evaluates the cipher key and plaintext.
+ * 
+ * @return null
+ */
 void Cipher::eval()
 {
     double root = sqrt(this->getKey().size());

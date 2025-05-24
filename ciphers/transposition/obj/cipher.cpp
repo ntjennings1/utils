@@ -8,7 +8,6 @@
  * 
  * The transposition cipher is an encryption algorithm that uses 
  * permutation and order to encrypt/decrypt text. 
- * 
  */
 Cipher::Cipher(string key, string ptext)
 {
@@ -91,7 +90,7 @@ void Cipher::setTable(vector<vector<string>>& table){
 /**
  * Gets the number of rows.
  * 
- * @return rows The number of expected rows. 
+ * @return rows An integer representing the number of rows.
  */
 int Cipher::getRows(){
     return this->rows;
@@ -100,7 +99,7 @@ int Cipher::getRows(){
 /**
  * Sets the number of rows.
  * 
- * @param rows The number of expected rows. 
+ * @param rows An integer representing the number of rows. 
  */
 void Cipher::setRows(int rows){
     this->rows = rows;

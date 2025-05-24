@@ -1,6 +1,6 @@
 /**
- * All imports. 
- */
+* All imports. 
+*/
 #include <iostream>
 #include <string>
 #include <unistd.h>
@@ -9,11 +9,11 @@
 using namespace std;
 
 /**
- * Runs the decryption algorithm.
- * 
- * @param argc The amount of available arguments.
- * @param argv A list of the available arguments.
- */
+* Runs the decryption algorithm.
+* 
+* @param argc The amount of available arguments.
+* @param argv A list of the available arguments.
+*/
 int main(int argc, char* argv[])
 {
 

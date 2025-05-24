@@ -8,7 +8,6 @@
  * 
  * The Atbash cipher is an encryption algorithm that uses 
  * monoalphabetic substitution to encrypt/decrypt text.
- * 
  */
 Cipher::Cipher(string ptext)
 {
@@ -58,7 +57,7 @@ void Cipher::setCiphertext(string ctext)
 /**
  * Gets the cipher table.
  * 
- * @return table A vector of string vectors describing the cipher table.
+ * @return table A vector of string vectors representing the cipher table.
  */
 vector<vector<string>> Cipher::getTable()
 {
@@ -68,7 +67,7 @@ vector<vector<string>> Cipher::getTable()
 /**
  * Sets the cipher table.
  * 
- * @param table A vector of string vectors describing the cipher table.
+ * @param table A vector of string vectors representing the cipher table.
  */
 void Cipher::setTable(vector<vector<string>> table)
 {
@@ -77,6 +76,8 @@ void Cipher::setTable(vector<vector<string>> table)
 
 /**
  * Initializes the cipher table.
+ * 
+ * @return null
  */
 void Cipher::tableInit()
 {
@@ -127,6 +128,8 @@ void Cipher::rowInit(vector<string>& row)
 
 /**
  * Shows the cipher table.
+ * 
+ * @return null
  */
 void Cipher::showTable()
 {
@@ -140,6 +143,8 @@ void Cipher::showTable()
 
 /**
  * Decrypts the ciphertext using the key.
+ * 
+ * @return null
  */
 void Cipher::decrypt()
 {
@@ -163,6 +168,8 @@ void Cipher::decrypt()
 
 /**
  * Encrypts the plaintext using the key.
+ * 
+ * @return null
  */
 void Cipher::encrypt()
 {
@@ -187,6 +194,8 @@ void Cipher::encrypt()
 
 /**
  * Stages the cipher table.
+ * 
+ * @return null
  */
 void Cipher::stage()
 {

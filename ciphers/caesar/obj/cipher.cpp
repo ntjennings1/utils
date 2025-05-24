@@ -4,7 +4,7 @@
 #include "cipher.h"
 
 /**
- * Implementation of the caesar cipher.
+ * Implementation of the Caesar cipher.
  * 
  * The Caesar cipher is an encryption algorithm that uses
  * permutation, order, and patterns to encrypt/decrypt text.
@@ -59,7 +59,7 @@ void Cipher::setKeys(vector<string> keys)
 /**
  * Gets the cipher pattern.
  * 
- * @return patter A string vector describing the cipher pattern.
+ * @return patter A string vector representing the cipher pattern.
  */
 vector<string> Cipher::getPattern()
 {
@@ -69,7 +69,7 @@ vector<string> Cipher::getPattern()
 /**
  * Sets the cipher pattern.
  * 
- * @param pattern A string vector describing the cipher pattern.
+ * @param pattern A string vector representing the cipher pattern.
  */
 void Cipher::setPattern(vector<string> pattern)
 {
@@ -79,7 +79,7 @@ void Cipher::setPattern(vector<string> pattern)
 /**
  * Gets the cipher table.
  * 
- * @return table A vector of string vectors describing the cipher table.
+ * @return table A vector of string vectors representing the cipher table.
  */
 vector<vector<string>> Cipher::getTable()
 {
@@ -89,7 +89,7 @@ vector<vector<string>> Cipher::getTable()
 /**
  * Sets the cipher table.
  * 
- * @param table A vector of string vectors describing the cipher table.
+ * @param table A vector of string vectors representing the cipher table.
  */
 void Cipher::setTable(vector<vector<string>>& table)
 {
@@ -183,6 +183,8 @@ void Cipher::grabPattern(string pattern)
 
 /**
  * Shows the cipher table.
+ * 
+ * @return null
  */
 void Cipher::showTable()
 {
@@ -196,6 +198,8 @@ void Cipher::showTable()
 
 /**
  * Shifts cipher table rows based on the keys.
+ * 
+ * @return null
  */
 void Cipher::makeShifts()
 {
@@ -236,6 +240,8 @@ void Cipher::makeShifts()
 
 /**
  * Initializes the cipher table.
+ * 
+ * @return null
  */
 void Cipher::tableInit()
 {
@@ -257,6 +263,8 @@ void Cipher::tableInit()
 
 /**
  * Decrypts the ciphertext using the pattern.
+ * 
+ * @return null
  */
 void Cipher::decrypt()
 {
@@ -302,6 +310,8 @@ void Cipher::decrypt()
 
 /**
  * Encrypts the plaintext using the pattern.
+ * 
+ * @return null
  */
 void Cipher::encrypt()
 {
@@ -339,6 +349,8 @@ void Cipher::encrypt()
 
 /**
  * Stages the cipher table.
+ * 
+ * @return null
  */
 void Cipher::stage()
 {   
