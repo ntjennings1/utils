@@ -28,7 +28,7 @@ string Cipher::getPlaintext()
 /**
  * Sets the plaintext.
  * 
- * @param ptext A string representing the plantext.
+ * @param ptext A string representing the plaintext.
  */
 void Cipher::setPlaintext(string ptext)
 {

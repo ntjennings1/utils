@@ -7,11 +7,11 @@
 using namespace std;
 
 /**
-* Runs the encryption algorithm.
-* 
-* @param argc The amount of available arguments.
-* @param argv A list of the available arguments.
-*/
+ * Runs the encryption algorithm.
+ * 
+ * @param argc The amount of available arguments.
+ * @param argv A list of the available arguments.
+ */
 int main(int argc, char* argv[])
 {
     int rails = std::atoi(argv[2]);
