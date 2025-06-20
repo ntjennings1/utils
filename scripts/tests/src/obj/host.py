@@ -5,6 +5,7 @@ import requests
 import threading
 import tkinter as tk
 import multiprocessing as mp
+from multiprocessing import Pool
 
 class Host():
     def __init__(self, scene):
@@ -127,7 +128,7 @@ class Host():
         self.reports.append(report)
         
     def pod(self):
-        def kill_threads(threads):
+        '''def kill_threads(threads):
             for t in threads:
                 t.stop()
         
@@ -147,7 +148,22 @@ class Host():
             kill_threads(threads)
         
         except Exception as ex:
+            print(ex)'''
+            
+        try:
+            ran = []
+            for n in range(1,100000):
+                ran.append(n)
+            with Pool(processes=4) as pool:
+                results = pool.map(self.get_scene().ping(self.get_ipv4(), self.get_psize(), self.get_length), ran)
+            print(results)
+        except Exception as ex:
             print(ex)
+        
+            
+    def print_reports(self):
+        for r in self.get_reports():
+            print(r)
                         
     def show_info(self):
         print("URL: " + self.get_url())
@@ -169,10 +185,10 @@ class Host():
             self.set_hostname("")
             
             self.set_reports([])
+            self.add_report('F.Oth')
             self.add_report(ex)
-            self.add_report("The test suite will be limited without a hostname.")
-            print(ex)
-            print('foth')
+            self.add_report("The test suite will be limited without a hostname.\n")
+            self.print_reports()
                 
     def fetch_ports(self):
         print()
@@ -187,10 +203,10 @@ class Host():
             self.set_ipv4("")
             
             self.set_reports([])
+            self.add_report('F.IPs.')
             self.add_report(ex)
-            self.add_report("Try a different URL.")
-            print(ex)
-            print('fips')
+            self.add_report("Try a different URL.\n")
+            self.print_reports()
                 
     def inform(self):
         try:
@@ -222,12 +238,12 @@ class Host():
         except Exception as ex:
             
             self.set_reports([])
+            self.add_report('C.Con')
             self.add_report(ex)
-            self.add_report("The test suite will not work without a reachable network")
-            print(ex)
-            print('con')
+            self.add_report("The test suite will not work without a reachable network.\n")
+            self.print_reports()
             
     def quick(self):
         self.check_con()
         self.inform()
-        self.show_info()
+        #self.show_info()

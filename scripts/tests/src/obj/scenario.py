@@ -1,4 +1,5 @@
 import os
+import asyncio
 import subprocess
 
 class Scenario():
@@ -18,7 +19,7 @@ class Scenario():
             if self.get_system() == 'Windows':
                 results = subprocess.run(["ping", '-n', '2', '-l', psize, ipv4])
             else:
-                results = subprocess.run(["ping", '-c', '2', ipv4])
+                results = subprocess.run(["ping", '-c', '2', '-s', psize, ipv4])
             
         except Exception as ex:
             print(ex)

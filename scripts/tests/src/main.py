@@ -5,6 +5,15 @@ from obj.scenario import Scenario
 from obj.window import Window
 from obj.host import Host
 
+def throw_error(mes):
+    
+    if mes == 'size':
+        print('The test suite reqiures a valid packet size.')
+    elif mes == 'url':
+        print('The test suite requires a valid URL.')
+    elif mes == 'ex':
+        print('Test Suite Failure.')
+
 def make_parser():
 
     parser = argparse.ArgumentParser()
@@ -53,6 +62,8 @@ def main(parser):
                 window.open()
         else:
             if args.info:
+                scene.clear_screen()
+                print('Informing ...')
                 if args.url:
                     host.set_url(args.url)
                     
@@ -68,9 +79,15 @@ def main(parser):
                             pod_thread = threading.Thread(target=host.pod())
                             pod_thread.start()
                             pod_thread.join()
+                        else:
+                            throw_error('size')
+                    else:
+                        host.show_info()
+                else:
+                    throw_error('url')
                     
     except Exception as ex:
-        print(ex)
+        throw_error('ex')
 
 if __name__ == '__main__':
 
