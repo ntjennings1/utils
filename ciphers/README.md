@@ -34,7 +34,6 @@ The encryption algorithms in this repository will have the following features:
 
 ### 3. Output stream
 - This feature returns the plaintext/ciphertext on the console.
-- NO SPACES
 
 ## Acknowledgements
 

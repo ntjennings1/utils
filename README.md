@@ -6,11 +6,26 @@ Utilities created for machines on the TC Network.
 
 This repository will have a collection of useful tools that relate to the following topics:
 
-1. Network manipulation
-2. System manipulation
-3. Encryption
-4. General automation
-5. Program testing
+### Ciphers
+
+Cipher utilities contain encryption schemes. Each of the following ciphers have their own way of encrypting and decrypting plaintext:
+
+- atbash
+- caesar
+- hill
+- morse
+- railfence
+- transposition
+- vernam
+- vigenere
+
+### Scripts
+
+Script utilties contain useful commands for automation. Each of the following topics are explored for Windows and Linux operating systems:
+
+- machine state
+- network manipulation
+- penetration testing 
 
 ## Acknowledgements
 
