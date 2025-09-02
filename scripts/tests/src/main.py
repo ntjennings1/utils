@@ -1,10 +1,16 @@
+""" Native imports. """
 import threading
 import argparse
 
+""" Class imports. """
 from obj.scenario import Scenario
 from obj.window import Window
 from obj.host import Host
 
+""" Throws errors.
+
+@return null
+"""
 def throw_error(mes):
     
     if mes == 'size':
@@ -14,6 +20,10 @@ def throw_error(mes):
     elif mes == 'ex':
         print('Test Suite Failure.')
 
+""" Creates the command line parser.
+
+@return null
+"""
 def make_parser():
 
     parser = argparse.ArgumentParser()
@@ -45,6 +55,10 @@ def make_parser():
     
     return parser 
 
+""" Accepts command line arguments to run the test suite.
+
+@return null
+"""
 def main(parser):
     args = parser.parse_args()
     
@@ -89,6 +103,10 @@ def main(parser):
     except Exception as ex:
         throw_error('ex')
 
+""" Crafts the parser and runs the main program.
+
+@return null
+"""
 if __name__ == '__main__':
 
     parser = make_parser()

@@ -4,8 +4,7 @@ A penetration test suite built for TC operatives.
 
 ## Software Requirements
 
-## Actions
-
+All required software are included in the requirements.txt file.
 
 ## Usage
 

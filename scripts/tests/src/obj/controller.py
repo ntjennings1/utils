@@ -1,9 +1,50 @@
+""" Native imports. """
 import time
 import threading
 import tkinter as tk
 
 class Controller(tk.Frame):
+    """ 
+    A class representing the test suite controller.
+    
+    ```
+    Attributes
+    ----------
+    master : The test suite's master
+    window : The test suite's window
+    viewer : The test suite's viewer
+    host : The controller's host
+    labels : The controller's labels
+    entries : The controller's entries
+    buttons : The controller's buttons
+    threads : The controller's threads
+    
+    ```
+    Methods
+    -------
+    exit : Closes the application
+    help : Displays helpful information
+    stop : Stops host testing
+    start : Starts host testing
+    reset : Resets the application
+    inform : Grabs information on host
+    
+    place : Places the controller in the test suite
+    customize : Customize controller entitites
+    show_reports : Shows testing reports    
+    """
 
+    """ Initializes the class instance.
+    
+    @param master : Test suite application root
+    @type master : tk.Tk()
+    
+    @param window : Test suite window
+    @type window : Object.class
+    
+    @param host : The host
+    @type host : Object.class
+    """
     def __init__(self, master, window, host):
         super().__init__(master)
         self.master = master
@@ -17,54 +58,138 @@ class Controller(tk.Frame):
 
         self.customize()
         
+    """ Returns the controller's window.
+    
+    @return window : Controller window
+    @rtype window : Object.class
+    """
     def get_window(self):
         return self.window
     
+    """ Sets the controller's window.
+    
+    @param window : Controller window
+    @type window : Object.class
+    """
     def set_window(self, window):
         self.window = window
-        
+    
+    """ Returns the controllers' viewer.
+    
+    @return viewer : Controller viewer
+    @rtype viewer : Object.class
+    """
     def get_viewer(self):
         return self.viewer
     
+    """ Sets the controller's viewer.
+    
+    @param viewer : Controller viewer
+    @type viewer : Object.class
+    """
     def set_viewer(self, viewer):
         self.viewer = viewer
-        
+    
+    """ Returns the controller's master.
+    
+    @return master : Controller master
+    @rtype master : tk.Tk()
+    """    
     def get_master(self):
         return self.master
     
+    """ Sets the controller's master.
+    
+    @param master : Controller master
+    @type master : tk.Tk()
+    """
     def set_master(self, master):
         self.master = master
-        
+
+    """ Returns the controller's host.
+    
+    @return host : Controller host
+    @rtype host : Object.class
+    """
     def get_host(self):
         return self.host
 
+    """ Sets the controller's host.
+    
+    @param host : Controller host
+    @type host : Object.class
+    """
     def set_host(self, host):
         self.host = host
 
+    """ Returns the controller's labels.
+    
+    @return labels : Controller labels
+    @rtype labels : list
+    """
     def get_labels(self):
         return self.labels
 
+    """ Sets the controller's labels.
+    
+    @param labels : Controller labels
+    @type labels : list
+    """
     def set_labels(self, labels):
         self.labels= labels
 
+    """ Returns the controller's entries.
+    
+    @return entries : Controller entries
+    @rtype entries : list
+    """
     def get_entries(self):
         return self.entries
 
+    """ Sets the controller's entries.
+    
+    @param entries : Controller entries
+    @type entries : list
+    """
     def set_entries(self, entries):
         self.entries = entries
-        
+    
+    """ Returns the controller's buttons.
+    
+    @return buttons : Controller buttons
+    @rtype buttons : list
+    """
     def get_buttons(self):
         return self.buttons
+
+    """ Sets the controller's buttons.
     
+    @param buttons : Controller buttons
+    @type buttons : list
+    """
     def set_buttons(self, buttons):
         self.buttons = buttons
-        
+    
+    """ Returns controller's threads.
+    
+    @return threads : Controller threads
+    @rtype threads : list
+    """    
     def get_threads(self):
         return self.threads
     
+    """ Sets the controller's threads.
+    
+    @param threads : Controller threads
+    @type threads : list
+    """
     def set_threads(self, threads):
         self.threads = threads
-        
+    
+    """ Shows the host reports.
+    
+    @return null
+    """
     def show_reports(self):
         i = 0
         for e in self.get_host().get_reports():
@@ -72,7 +197,11 @@ class Controller(tk.Frame):
             self.get_viewer().get_view().insert(tk.END, e)
             self.get_viewer().get_view().insert(tk.END, "\n")
             i = i + 1
-        
+    
+    """ Informs the test suite on host traits.
+    
+    @return null
+    """    
     def inform(self):
     
         self.get_viewer().get_view().config(state='normal')
@@ -113,7 +242,11 @@ class Controller(tk.Frame):
             
         except Exception as ex:            
            self.show_reports()
-        
+    
+    """ Starts testing the selected host.
+    
+    @return null
+    """
     def start(self):
         self.get_viewer().get_view().config(state='normal')
         self.get_viewer().clear_text()
@@ -146,10 +279,18 @@ class Controller(tk.Frame):
 
         except Exception as ex:          
            self.show_reports()
-            
+    
+    """ Closes the application.
+    
+    @return null
+    """    
     def exit(self):
         exit(0)
-          
+    
+    """ Displays helpful information.
+    
+    @return null
+    """      
     def help(self):
         
         ''' Inform on enpoint
@@ -200,7 +341,11 @@ class Controller(tk.Frame):
         for l in mes:
             self.get_viewer().add_line(l)
         self.get_viewer().get_view().config(state='disabled')
-        
+    
+    """ Stops testing the selected host.
+    
+    @return null
+    """
     def stop(self):
         
         for t in self.get_threads():
@@ -215,13 +360,25 @@ class Controller(tk.Frame):
                 b[0].config(state='disabled')
             elif b[1] == 'start' or b[1] == 'reset':
                 b[0].config(state='normal')
-        
+    
+    """ Resets the test suite.
+    
+    @return null
+    """
     def reset(self):
         self.get_master().destroy()
 
+    """ Places the controller in the test suite.
+    
+    @return null
+    """
     def place(self, row, col):
         self.grid(row=row, column=col)
-        
+    
+    """ Customizes controller entities.
+    
+    @return null
+    """    
     def customize(self):
         labels = []
         entries = []
