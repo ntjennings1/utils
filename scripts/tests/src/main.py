@@ -43,9 +43,6 @@ def make_parser():
     parser.add_argument('-l', '--len', help="Desired loop length")
     parser.add_argument('-s', '--size', help="Desired packet size")
     
-    
-    
-
     return parser 
 
 def main(parser):
