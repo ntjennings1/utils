@@ -1,7 +1,7 @@
 /**
  * All imports.
  */
- #include <unistd.h>
+#include <unistd.h>
 #include "./obj/cipher.h"
 
 using namespace std;
