@@ -5,17 +5,18 @@ Rem Checks if the device is connected to the Internet.
 	cls
 	echo please wait ...
 
+	:: Use ping to test Internet connection.
 	ping -n 1 www.google.com >nul
 
 	if not errorlevel 1 goto :noerror
 	if errorlevel 1 goto :error
 
-	Rem Displays the device is connected.
+	:: Display script success.
 	:noerror
 	echo Connected.
 	EXIT /B
 
-	Rem Displays the device is not connected.
+	:: Display script failure.
 	:error
 	echo Not connected.
 	EXIT /B

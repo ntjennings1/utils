@@ -5,16 +5,17 @@ Rem Attempts to enable the Wi-Fi interface.
 	cls
 	echo please wait ...
 
+	:: Use NETSH to manipulate Wi-Fi interface.
 	netsh interface set interface Wi-Fi enabled
 	if not errorlevel 1 goto :noerror
 	if errorlevel 1 goto :error
 
-	Rem Displays the device is enabled.
+	:: Display script success.
 	:noerror
 	echo Enabled successfully.
 	EXIT /B
 
-	Rem Displays an error in enabling.
+	:: Display script failure.
 	:error
 	echo Error in enabling.
 	EXIT /B

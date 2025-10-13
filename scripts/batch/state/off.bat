@@ -5,4 +5,5 @@ Rem Shuts the system down.
 	cls
 	echo please wait ...
 
+    :: Shut the system down.
 	shutdown /s /f /t 0

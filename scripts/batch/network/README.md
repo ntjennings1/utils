@@ -1,44 +1,51 @@
 # Network
 
-These scripts can be used to manipulate your machines network options.
+These scripts can be used to manipulate your Windows machine's network interfaces.
 
 ## Utility Uses
 
 This section will cover the different utilities and how to use them.
 
-### NetUp
-This utility will enable your machines wireless interface. Use by entering the following command inside this directory with admin priviledges:
-
+### EthDown
+This utility will disabled the ethernet interface of the user's machine. Use by entering the following command from inside this directory:
 ```
-    > .\netup.bat
-```
-
-### NetDown
-This utility will disable your machines wireless interface. Use by entering the following command inside this directory with admin priviledges:
-
-```
-    > .\netdown.bat
+    .\ethdown.bat
 ```
 
-### NetConnect
-This utility will connect your machine to a Wireless Access Point of your choosing (if previously connected). Use by entering the following command inside this directory with the SSID of your desired access point:
-
+### EthUp
+This utility will enable the ethernet interface of the user's machine. Use by entering the following command from inside this directory:
 ```
-    > .\netcon.bat YOUR_SSID
-```
-
-### NetDisconnect
-This utility will disconnect your machine from the current Wireless Access Point. Use by entering the following command from inside this directory:
-
-```
-    > .\netdiscon.bat
+    .\ethup.bat
 ```
 
 ### NetCheck
 This utility will check whether or not the users machine is connected to the internet. Use by entering the following command from inside this directory:
-
 ```
-    > .\netcheck.bat
+    .\netcheck.bat
+```
+
+### WlanCon
+This utility will reset the Wi-Fi interface of the user's machine and connect to a logged WAP. Use by entering the following command from inside this directory:
+```
+    .\wlancon.bat
+```
+
+### WlanDiscon
+This utility will disconnect the Wi-Fi interface of the user's machine from the currently connected WAP. Use by entering the following command from inside this directory:
+```
+    .\wlandiscon.bat
+```
+
+### WlanDown
+This utility will disable the Wi-Fi interface of the user's machine. Use by entering the following command from inside this directory:
+```
+    .\wlandown.bat
+```
+
+### WlanUp
+This utility will enable the Wi-Fi interface of the user's machine. Use by entering the following command from inside this directory:
+```
+    .\wlanup.bat
 ```
 
 ## Acknowledgements
@@ -46,9 +53,5 @@ This utility will check whether or not the users machine is connected to the int
 Noah Jennings 
     TC 
     ntjennings1@gmail.com
-    Virginia Beach, VA
-    
-TC 
-    th3orycc@gmail.com
     Virginia Beach, VA
 ```

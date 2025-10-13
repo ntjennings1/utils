@@ -58,12 +58,8 @@ python src\main.py --g
 ```
 
 ## Acknowledgements
-
-    Noah Jennings 
-        TC 
-        ntjennings1@gmail.com
-        Virginia Beach, VA
-        
-    TC 
-        th3orycc@gmail.com
-        Virginia Beach, VA
+```
+Noah Jennings 
+    ntjennings1@gmail.com
+    Virginia Beach, VA
+```

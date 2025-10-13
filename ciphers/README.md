@@ -1,6 +1,6 @@
 # Ciphers
 
-Various encryption algorithms created for machines on the TC Network.
+Various encryption algorithms created for machines on a network.
 
 ## Software Requirements
 
@@ -36,12 +36,8 @@ The encryption algorithms in this repository will have the following features:
 - This feature returns the plaintext/ciphertext on the console.
 
 ## Acknowledgements
-
-    Noah Jennings 
-        TC 
-        ntjennings1@gmail.com
-        Virginia Beach, VA
-        
-    TC 
-        th3orycc@gmail.com
-        Virginia Beach, VA
+```
+Noah Jennings 
+    ntjennings1@gmail.com
+    Virginia Beach, VA
+```

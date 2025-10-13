@@ -1,6 +1,6 @@
 # Scripts
 
-Utility scripts created for machines on the TC Network.
+Utility scripts created for machines on a Network.
 
 ## Topics
 
@@ -12,12 +12,8 @@ This repository will have a collection of useful scripts that relate to the foll
 4. Program testing
 
 ## Acknowledgements
-
-    Noah Jennings 
-        TC 
-        ntjennings1@gmail.com
-        Virginia Beach, VA
-        
-    TC 
-        th3orycc@gmail.com
-        Virginia Beach, VA
+```
+Noah Jennings 
+    ntjennings1@gmail.com
+    Virginia Beach, VA
+```

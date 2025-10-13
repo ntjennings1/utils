@@ -1,6 +1,6 @@
 # Utils
 
-Utilities created for machines on the TC Network.
+Utilities created for machines on a network.
 
 ## Tools
 
@@ -28,12 +28,8 @@ Script utilties contain useful commands for automation. Each of the following to
 - penetration testing 
 
 ## Acknowledgements
-
-    Noah Jennings 
-        TC 
-        ntjennings1@gmail.com
-        Virginia Beach, VA
-        
-    TC 
-        th3orycc@gmail.com
-        Virginia Beach, VA
+```
+Noah Jennings 
+    ntjennings1@gmail.com
+    Virginia Beach, VA
+```

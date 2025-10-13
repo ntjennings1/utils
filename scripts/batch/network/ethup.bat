@@ -4,17 +4,18 @@ Rem Attempts to enable the Ethernet interface.
 
 	cls
 	echo please wait ...
-
+	
+	:: Use NETSH to manipulate ETHERNET interface.
 	netsh interface set interface Ethernet enabled
 	if not errorlevel 1 goto :noerror
 	if errorlevel 1 goto :error
 
-	Rem Displays the device is enabled.
+	:: Display script success.
 	:noerror
 	echo Enabled successfully.
 	EXIT /B
 
-	Rem Displays an error in enabling.
+	:: Display script failure.
 	:error
 	echo Error in enabling.
 	EXIT /B
