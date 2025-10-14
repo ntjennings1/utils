@@ -14,8 +14,8 @@ using namespace std;
 /**
  * Implementation of the Atbash cipher. 
  * 
- * The Atbash cipher is an encryption algorithm that uses 
- * monoalphabetic substitution to encrypt/decrypt text.
+ * The Atbash cipher is an algorithm that uses monoalphabetic
+ * substitution to encrypt/decrypt text.
  * 
  */
 class Cipher{

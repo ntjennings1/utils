@@ -14,9 +14,9 @@ using namespace std;
 
 
 /**
- * Implementation of the Transposition cipher. 
+ * Implementation of a Transposition cipher. 
  * 
- * The Transposition cipher is an encryption algorithm that uses 
+ * This Transposition cipher is algorithm that uses 
  * permutation and order to encrypt/decrypt text.
  * 
  */
@@ -48,9 +48,11 @@ class Cipher{
         void blockify();
         vector<vector<string>> tempSetup();
         void transpose();
+       
         void encrypt();
         void decrypt();
         void stage();
+        void eval();
 
     /**
      * All private characteristics of the encryption algorithm.

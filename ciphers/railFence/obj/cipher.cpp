@@ -1,57 +1,107 @@
+/**
+ * All imports.
+ */
 #include "cipher.h"
 
+/**
+ * Implementation of the Railfence cipher. 
+ * 
+ * The Railfence cipher is an algorithm that uses
+ * transposition to encrypt/decrypt text.
+ * 
+ */
 Cipher::Cipher(string ptext, int rails)
 {
     this->ptext = ptext;
     this->rails = rails;
 }
 
+/**
+ * Gets the plaintext.
+ * 
+ * @return ptext A string representing the plaintext.
+ */
 string Cipher::getPlaintext()
 {
     return this->ptext;
 }
 
+/**
+ * Sets the plaintext.
+ * 
+ * @param ptext A string representing the plantext.
+ */
 void Cipher::setPlaintext(string ptext)
 {
     this->ptext = ptext;
 }
 
+/**
+ * Gets the number of rails.
+ * 
+ * @return rails A integer representing the number of rails.
+ */
 int Cipher::getRails()
 {
     return this->rails;
 }
 
+/**
+ * Sets the number of rails.
+ * 
+ * @param rails A integer representing the number of rails.
+ */
 void Cipher::setRails(int rails)
 {
     this->rails = rails;
 }
 
+/**
+ * Gets the ciphertext.
+ * 
+ * @return ctext A string representing the ciphertext.
+ */
 string Cipher::getCiphertext()
 {
     return this->ctext;
 }
 
+/**
+ * Sets the ciphertext.
+ * 
+ * @param ctext A string representing the ciphertext.
+ */
 void Cipher::setCiphertext(string ctext)
 {
     this->ctext = ctext;
 }
 
+/**
+ * Gets the cipher table.
+ * 
+ * @return table A vector of string vectors describing the cipher table.
+ */
 vector<vector<string>>& Cipher::getTable()
 {
     return this->table;
 }
 
+/**
+ * Sets the cipher table.
+ * 
+ * @param table A vector of string vectors describing the cipher table.
+ */
 void Cipher::setTable(vector<vector<string>> table)
 {
     this->table = table;
 }
 
+/**
+ * Initializes the cipher table.
+ * 
+ * @return null
+ */
 void Cipher::tableInit()
-{
-    this->addRows();
-}
-
-void Cipher::addRows()
 {
     for (int i = 0; i < this->getRails(); i ++)
     {
@@ -63,6 +113,11 @@ void Cipher::addRows()
     }
 }
 
+/**
+ * Adds a row to the table.
+ * 
+ * @param row A string vector.  
+ */
 void Cipher::rowInit(vector<string>& row)
 {
     for (int i = 0; i < this->getPlaintext().size(); i ++)
@@ -76,6 +131,11 @@ void Cipher::addRow(vector<string>& row)
     table.push_back(row);
 }
 
+/**
+ * Shows the cipher table.
+ * 
+ * @return null
+ */
 void Cipher::showTable()
 {
     for (const auto& row : this->getTable())
@@ -88,6 +148,11 @@ void Cipher::showTable()
     }
 }
 
+/**
+ * Decrypts the ciphertext using the key.
+ * 
+ * @return null
+ */
 void Cipher::decrypt()
 {
 
@@ -203,6 +268,11 @@ void Cipher::decrypt()
     cout << temp << endl;
 }
 
+/**
+ * Encrypts the plaintext using the key.
+ * 
+ * @return null
+ */
 void Cipher::encrypt()
 {
     int j = 0;
@@ -262,11 +332,21 @@ void Cipher::encrypt()
 
 }
 
+/**
+ * Stages the cipher table.
+ * 
+ * @return null
+ */
 void Cipher::stage()
 {
     this->tableInit();
 }
 
+/**
+ * Evaluates the plaintext.
+ * 
+ * @return null
+ */
 void Cipher::eval()
 {
     string str = this->getPlaintext();

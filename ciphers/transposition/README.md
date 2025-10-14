@@ -6,6 +6,14 @@ This transposition cipher is an encryption method which scrambles the positions 
 
 Here we will study the Columnar Transposition Cipher. This is where the plaintext is written out in rows of a fixed length (the length of the key) and then read back column by column. The order in which the columns are read back is determined by the alphabetical order of the letters in the key. 
 
+## Cipher Features
+
+The encryption algorithms in this repository will have the following features:
+
+1. Plaintext Validation
+2. Cipher key validation
+3. Output stream
+
 ## Uses
 
 Running this simulation is simple. Enter the source directory of this cipher algorithm: 
@@ -21,9 +29,7 @@ Run the following command to compile the C++ code into an executable:
 g++ .\encrypt.cpp .\obj\cipher.cpp -o encrypt.exe
 ```
 
-Then run the executable. Be sure to enter your own key and plain text. 
-
-Also, make sure all input variables are surrounded by double quotes.
+Then run the executable. Be sure to enter your own key and plain text. Also, make sure all input variables are surrounded by double quotes.
 
 ```
 .\encrypt.exe "CIPHER_KEY" "PLAIN_TEXT"
@@ -43,18 +49,16 @@ Then run the executable. Be sure to enter your own key and cipher text. Also, ma
 ```
 
 ## Acknowledgements
-
-    Noah Jennings 
-        TC 
-        ntjennings1@gmail.com
-        Virginia Beach, VA
-        
+```
+Noah Jennings 
     TC 
-        th3orycc@gmail.com
-        Virginia Beach, VA
+    ntjennings1@gmail.com
+    Virginia Beach, VA
+```
 
 ## Sources
 
 Also, I would like to recognize external organizations and websites that contributed to the content in this repository:
 
 1. [The Transposition Cipher](https://en.wikipedia.org/wiki/Transposition_cipher)
+2. [Transposition Cipher Techniques in Cryptography](https://www.geeksforgeeks.org/computer-networks/transposition-cipher-techniques-in-cryptography/)

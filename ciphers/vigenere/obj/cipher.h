@@ -12,11 +12,10 @@
 using namespace std;
 
 /**
- * Implementation of the Vigenere cipher. 
+ * Implementation of the Vigenere cipher.
  * 
- * The Vigenere cipher is an encryption algorithm that uses 
- * polyalphabetic substitution to encrypt/decrypt text.
- * 
+ * The Vigenere cipher is an algorithm that uses polyalphabetic
+ * substitution to encrypt/decrypt text.
  */
 class Cipher{
 

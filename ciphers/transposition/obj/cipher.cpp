@@ -4,9 +4,9 @@
 #include "cipher.h"
 
 /**
- * Implementation of the transposition cipher. 
+ * Implementation of a Transposition cipher. 
  * 
- * The transposition cipher is an encryption algorithm that uses 
+ * This Transposition cipher is an algorithm that uses 
  * permutation and order to encrypt/decrypt text. 
  * 
  */
@@ -121,6 +121,8 @@ void Cipher::rowInit(int len, vector<string>& row){
 
 /**
  * Shows the cipher table.
+ * 
+ * @return null
  */
 void Cipher::showTable(){
 
@@ -149,6 +151,8 @@ void Cipher::showRow(vector<string>& row){
 
 /**
  * Puts the key into the table.
+ * 
+ * @return null
  */
 void Cipher::addKey(){
 
@@ -164,6 +168,8 @@ void Cipher::addKey(){
 
 /**
  * Puts the plaintext into the table.
+ * 
+ * @return null
  */
 void Cipher::addPlaintext(){
 
@@ -213,6 +219,8 @@ void Cipher::addRow(vector <string>& row){
 
 /**
  * Finds the order of characters in the key.
+ * 
+ * @return null
  */
 void Cipher::order(){
   
@@ -244,6 +252,8 @@ void Cipher::order(){
 
 /**
  * Split the ciphertext into blocks.
+ * 
+ * @return null
  */
 void Cipher::blockify(){
     int i = 0;
@@ -305,6 +315,8 @@ vector<vector<string>> Cipher::tempSetup(){
 
 /**
  * Transposes the ciphertext in the cipher table.
+ * 
+ * @return null
  */
 void Cipher::transpose(){
     
@@ -331,6 +343,8 @@ void Cipher::transpose(){
 
 /**
  * Decrypts the ciphertext using the key.
+ * 
+ * @return null
  */
 void Cipher::decrypt(){
 
@@ -379,6 +393,8 @@ void Cipher::decrypt(){
 
 /**
  * Encrypts the plaintext using the key.
+ * 
+ * @return null
  */
 void Cipher::encrypt(){
     int id = 1; 
@@ -412,6 +428,8 @@ void Cipher::encrypt(){
 
 /**
  * Stages the cipher table.
+ * 
+ * @return null
  */
 void Cipher::stage(){
 
@@ -419,4 +437,14 @@ void Cipher::stage(){
     this->order();
     this->addPlaintext();
     //this->showTable();
+}
+
+/**
+ * Evaluates the cipher key and plaintext.
+ * 
+ * @return null
+ */
+void Cipher::eval()
+{
+    ;
 }

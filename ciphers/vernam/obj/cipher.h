@@ -15,8 +15,8 @@ using namespace std;
 /**
  * Implementation of the Vernam cipher.
  * 
- * The Vernam cipher is an encryption algorithm that uses
- * substitution, and the binary XOR to encrypt/decrypt text.
+ * The Vernam cipher is an algorithm that uses substitution,
+ * and the binary XOR to encrypt/decrypt text.
  */
 class Cipher{
     /**

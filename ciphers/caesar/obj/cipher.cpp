@@ -4,10 +4,10 @@
 #include "cipher.h"
 
 /**
- * Implementation of the caesar cipher.
+ * Implementation of the Caesar cipher.
  * 
- * The Caesar cipher is an encryption algorithm that uses
- * permutation, order, and patterns to encrypt/decrypt text.
+ * The Caesar cipher is an algorithm that uses permutation,
+ * order, and patterns to encrypt/decrypt text.
  */
 Cipher::Cipher(string ptext, string keys, string pattern)
 {
@@ -183,6 +183,8 @@ void Cipher::grabPattern(string pattern)
 
 /**
  * Shows the cipher table.
+ * 
+ * @return null
  */
 void Cipher::showTable()
 {
@@ -196,6 +198,8 @@ void Cipher::showTable()
 
 /**
  * Shifts cipher table rows based on the keys.
+ * 
+ * @return null
  */
 void Cipher::makeShifts()
 {
@@ -236,6 +240,8 @@ void Cipher::makeShifts()
 
 /**
  * Initializes the cipher table.
+ * 
+ * @return null
  */
 void Cipher::tableInit()
 {
@@ -257,6 +263,8 @@ void Cipher::tableInit()
 
 /**
  * Decrypts the ciphertext using the pattern.
+ * 
+ * @return null
  */
 void Cipher::decrypt()
 {
@@ -302,6 +310,8 @@ void Cipher::decrypt()
 
 /**
  * Encrypts the plaintext using the pattern.
+ * 
+ * @return null
  */
 void Cipher::encrypt()
 {
@@ -339,10 +349,22 @@ void Cipher::encrypt()
 
 /**
  * Stages the cipher table.
+ * 
+ * @return null
  */
 void Cipher::stage()
 {   
     this->tableInit();
     this->makeShifts();
     //this->showTable();
+}
+
+/**
+ * Evaluates the cipher key and the plaintext.
+ * 
+ * @return null
+ */
+void Cipher::eval()
+{
+    ;
 }

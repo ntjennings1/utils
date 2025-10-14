@@ -14,8 +14,8 @@ using namespace std;
 /**
  * Implementation of the Caesar cipher.
  * 
- * The Caesar cipher is an encryption algorithm that uses
- * permutation, order, and patterns to encrypt/decrypt text.
+ * The Caesar cipher is an algorithm that uses permutation,
+ * order, and patterns to encrypt/decrypt text.
  */
 class Cipher{
 
@@ -36,16 +36,18 @@ class Cipher{
         vector<vector<string>> getTable();
         void setTable(vector<vector<string>>& table);
 
+        void tableInit();
         void rowInit(vector<string>& row);
         void addRow(vector<string>& row);
-        void grabKeys(string keys);
-        void grabPattern(string pattern);
         void showTable();
         void makeShifts();
-        void tableInit();
+        void grabKeys(string keys);
+        void grabPattern(string pattern);
+
         void decrypt();
         void encrypt();
         void stage();
+        void eval();
 
     /**
      * All private characteristics of the encryption algorithm.

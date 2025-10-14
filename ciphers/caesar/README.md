@@ -2,7 +2,7 @@
 This utility is used to simulate the Caesar cipher.
 
 ## About
-The Caesar cipher is an encryption method which works to conceal message identity by substituting the characters in the message for other characters. This is implemented through a regular system, with a key and pattern, to produce an encoded message that alters the state of the plaintext units. Also known as the Shift cipher, the Caesar Cipher simply alters plaintext units and not the position of the units.
+The Caesar cipher is an algorithm which works to conceal message identity by substituting the characters in the message for other characters. This is implemented through a regular system, with a key and pattern, to produce an encoded message that alters the state of the plaintext units. Also known as the Shift cipher, the Caesar Cipher simply alters plaintext units and not the position of the units.
 
 Here we will study the implementation of the Caesar cipher. By shifting the characters in the alphabet (according to a list of integer keys) one can create altered alphabets. Given multiple keys, the pattern (a list of integers representing which key to use iteratively) can map ciphertext units by grabbing the character at the position of each plaintext unit in the corresponding altered alphabet. 
 
@@ -40,18 +40,16 @@ Then run the executable. Be sure to enter your pattern, key, and plain text. Als
 ```
 
 ## Acknowledgements
-
-    Noah Jennings 
-        TC 
-        ntjennings1@gmail.com
-        Virginia Beach, VA
-        
+```
+Noah Jennings 
     TC 
-        th3orycc@gmail.com
-        Virginia Beach, VA
+    ntjennings1@gmail.com
+    Virginia Beach, VA
+```
 
 ## Sources
 
 Also, I would like to recognize external organizations and websites that contributed to the content in this repository:
 
 1. [The Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
+2. [Caesar Cipher in Cryptography](https://www.geeksforgeeks.org/ethical-hacking/caesar-cipher-in-cryptography/)

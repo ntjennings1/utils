@@ -6,8 +6,8 @@
 /**
  * Implementation of the Vigenere cipher.
  * 
- * The Caesar cipher is an encryption algorithm that uses
- * polyalphabetic substitution to encrypt/decrypt text.
+ * The Vigenere cipher is an algorithm that uses polyalphabetic
+ * substitution to encrypt/decrypt text.
  */
 Cipher::Cipher(string ptext, string key)
 {
@@ -97,6 +97,8 @@ void Cipher::setTable(vector<vector<string>> table)
 
 /**
  * Initializes the cipher table.
+ * 
+ * @return null
  */
 void Cipher::tableInit()
 {
@@ -144,6 +146,8 @@ void Cipher::rowInit(vector<string>& row)
 
 /**
  * Shows the cipher table.
+ * 
+ * @return null
  */
 void Cipher::showTable()
 {
@@ -157,6 +161,8 @@ void Cipher::showTable()
 
 /**
  * Shifts cipher table rows based on the previous entry.
+ * 
+ * @return null
  */
 vector<string> Cipher::makeShifts(vector<string>& row)
 {
@@ -179,7 +185,9 @@ vector<string> Cipher::makeShifts(vector<string>& row)
 }
 
 /**
- * Fixes the cipher key to math the length of the plaintext.
+ * Fixes the cipher key to match the length of the plaintext.
+ * 
+ * @return null
  */
 void Cipher::fixKey()
 {
@@ -201,6 +209,8 @@ void Cipher::fixKey()
 
 /**
  * Decrypts the ciphertext using the key.
+ * 
+ * @return null
  */
 void Cipher::decrypt()
 {
@@ -228,11 +238,14 @@ void Cipher::decrypt()
         }
     }
 
-    cout << otemp;
+    this->setCiphertext(otemp);
+    cout << this->getCiphertext() << endl;
 }
 
 /**
  * Encrypts the plaintext using the key.
+ * 
+ * @return null
  */
 void Cipher::encrypt()
 {
@@ -261,11 +274,13 @@ void Cipher::encrypt()
     }
 
     this->setCiphertext(otemp);
-    cout << this->getCiphertext();
+    cout << this->getCiphertext() << endl;
 }
 
 /**
  * Stages the cipher table.
+ * 
+ * @return null
  */
 void Cipher::stage()
 {
@@ -275,7 +290,9 @@ void Cipher::stage()
 }
 
 /**
- * Evaluates the lengths of the cipher key and plaintext.
+ * Evaluates the cipher key and plaintext.
+ * 
+ * @return null
  */
 void Cipher::eval()
 {

@@ -6,8 +6,8 @@
 /**
  * Implementation of the Atbash cipher. 
  * 
- * The Atbash cipher is an encryption algorithm that uses 
- * monoalphabetic substitution to encrypt/decrypt text.
+ * The Atbash cipher is an algorithm that uses monoalphabetic
+ * substitution to encrypt/decrypt text.
  * 
  */
 Cipher::Cipher(string ptext)
@@ -77,6 +77,8 @@ void Cipher::setTable(vector<vector<string>> table)
 
 /**
  * Initializes the cipher table.
+ * 
+ * @return null
  */
 void Cipher::tableInit()
 {
@@ -101,7 +103,7 @@ void Cipher::tableInit()
 }
 
 /**
- * Adds a row to the table.
+ * Adds a row to the cipher table.
  * 
  * @param row A string vector.  
  */
@@ -127,6 +129,8 @@ void Cipher::rowInit(vector<string>& row)
 
 /**
  * Shows the cipher table.
+ * 
+ * @return null
  */
 void Cipher::showTable()
 {
@@ -140,6 +144,8 @@ void Cipher::showTable()
 
 /**
  * Decrypts the ciphertext using the key.
+ * 
+ * @return null
  */
 void Cipher::decrypt()
 {
@@ -163,6 +169,8 @@ void Cipher::decrypt()
 
 /**
  * Encrypts the plaintext using the key.
+ * 
+ * @return null
  */
 void Cipher::encrypt()
 {
@@ -187,6 +195,8 @@ void Cipher::encrypt()
 
 /**
  * Stages the cipher table.
+ * 
+ * @return null
  */
 void Cipher::stage()
 {

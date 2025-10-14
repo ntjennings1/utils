@@ -1,15 +1,29 @@
 #ifndef CIPHER_H
 #define CIPHER_H
 
+/**
+ * All imports.
+ */
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cctype>
 
 using namespace std;
 
+/**
+ * Implementation of Morse Code.
+ * 
+ * Morse Code is an algorithm that uses polyalphabetic
+ * substitution to encrypt/decrypt text.
+ * 
+ */
 class Cipher{
 
+    /**
+     * All public methods relevant to the cipher.
+     */
     public:
         Cipher(string ptext);
         
@@ -29,6 +43,9 @@ class Cipher{
         void stage();
         void eval();
 
+    /**
+     * All private characteristics of the encryption algorithm.
+     */
     private:
         string ptext = "";
         vector<vector<string>> table;
