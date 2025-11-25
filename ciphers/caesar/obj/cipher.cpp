@@ -269,7 +269,7 @@ void Cipher::tableInit()
 void Cipher::decrypt()
 {
     int len = this->getPlaintext().size();
-    int j = 0;
+    int j = 1;
     string temp = "";
 
     for (int i = 0; i < len; i ++)
@@ -277,30 +277,31 @@ void Cipher::decrypt()
         string c = "";
         c = c + this->getPlaintext()[i];
 
-        if (isspace(this->getPlaintext()[i]))
+        if (!isalnum(this->getPlaintext()[i]))
         {
-            temp = temp + " ";
+            temp = temp + c;
         }
         else
-        {     
+        {
+
             if (j == this->getPattern().size())
             {
-                j = 0;
+                j = 1;
             }
-            
-            int ciph = stoi(this->getPattern()[j]);
-            int pos = 0;
 
-            for (int h = 0; h < this->getTable()[0].size(); h ++)
+            int p = 0;
+            for (int z = 0; z < this->getTable()[j+1].size(); z ++)
             {
-                if (this->getTable()[ciph+1][h] == c)
+                string y = "";
+                y = y + this->getTable()[j+1][z];
+
+                if ( y == c )
                 {
-                    pos = h;
-                    temp = temp + this->getTable()[0][pos];
-                    break; 
+                    p = z;
                 }
             }
-            
+
+            temp = temp + this->getTable()[0][p];
             j = j + 1;
         }
     }
@@ -316,30 +317,44 @@ void Cipher::decrypt()
 void Cipher::encrypt()
 {
     int len = this->getPlaintext().size();
-    int j = 0; 
+    int j = 1; 
     string temp = "";
     
     for (int i = 0; i < len; i ++)
     {
+        string c = "";
+        c = c + this->getPlaintext()[i];
 
-        if (isspace(this->getPlaintext()[i]))
+        if (!isalnum(this->getPlaintext()[i]))
         {
-            temp = temp + " ";
+            temp = temp + c;
         }
         else
-        {     
+        {
+
             if (j == this->getPattern().size())
             {
-                j = 0;
+                j = 1;
             }
 
-            int p = stoi(to_string(this->getPlaintext()[i])) - 97;   
-            int ciph = stoi(this->getPattern()[j]);
+            int p = 0;
+            for (int z = 0; z < this->getTable()[0].size(); z ++)
+            {
 
-            temp = temp + this->getTable()[ciph+1][p];
-            
+                string y = "";
+                y = y + this->getTable()[0][z];
+
+                if ( y == c )
+                {
+                    p = z;
+                }
+
+            }
+
+            temp = temp + this->getTable()[j+1][p];            
             j = j + 1;
         }
+
     }
 
     this->setCiphertext(temp);
@@ -366,5 +381,8 @@ void Cipher::stage()
  */
 void Cipher::eval()
 {
-    ;
+    string temp;
+    temp = this->getPlaintext();
+    transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
+    this->setPlaintext(temp);
 }

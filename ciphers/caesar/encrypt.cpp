@@ -16,6 +16,7 @@ int main(int argc, char* argv[])
 {
     Cipher cipher(argv[1], argv[2], argv[3]);
 
+    cipher.eval();
     cipher.stage();
     cipher.encrypt();
 
