@@ -4,9 +4,23 @@ This utility is used to simulate the Caesar cipher.
 ## About
 The Caesar cipher is an algorithm which works to conceal message identity by substituting the characters in the message for other characters. This is implemented through a regular system, with a key and pattern, to produce an encoded message that alters the state of the plaintext units. Also known as the Shift cipher, the Caesar Cipher simply alters plaintext units and not the position of the units.
 
-Here we will study the implementation of the Caesar cipher. By shifting the characters in the alphabet (according to a list of integer keys) one can create altered alphabets. Given multiple keys, the pattern (a list of integers representing which key to use iteratively) can map ciphertext units by grabbing the character at the position of each plaintext unit in the corresponding altered alphabet. 
+Here we will study the implementation of the Caesar cipher. By shifting the characters in the alphabet (according to a list of integer keys) one can create altered alphabets. Given multiple keys, the pattern (a list of integers representing which key to use iteratively) can map ciphertext units by grabbing the character at the position of each plaintext unit in the corresponding altered alphabet.
 
-## Uses
+### Cipher Table
+
+The Caesar cipher will start by devising the follow character table based on the English alphabet.
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| A | B | C | D | E | F | G | H | I | J  | K  | L  | M  | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  |
+
+Given a key of 3, in any pattern, plaintext at a given index will correspond to the following shifted row, creating the ciphertext after iteration.
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| D | E | F | G | H | I | J | K | L | M  | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  | A  | B  | C  |
+
+## Usage
 Running this simulation is simple. Enter the source directory of this cipher algorithm: 
 
 ```
@@ -26,6 +40,31 @@ Then run the executable. Be sure to enter your pattern, key, and plain text. Als
 encrypt.exe "PLAINTEXT" "CIPHER_KEY_1, CIPHER_KEY_2, ..., CIPHER_KEY_N" "PATTERN_ITEM_1, PATTERN_ITEM_2, ..., PATTERN_ITEM_N"
 ```
 
+#### Example
+
+For example,
+
+```
+encrypt.exe "something" "3,4" "1,2"
+```
+
+This command should generate the following cipher text:
+
+```
+vrphwklqj
+```
+
+Stemming from the following cipher table with shifted rows:
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| A | B | C | D | E | F | G | H | I | J  | K  | L  | M  | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  |
+| D | E | F | G | H | I | J | K | L | M  | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  | A  | B  | C  |
+| E | F | G | H | I | J | K | L | M | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  | A  | B  | C  | D  |
+
+Thus, when looping over each character in the plaintext (i=1,2,..,n), they will be swapped with their index (i) in the new row (1 or 2).
+Which row is indicated by the pattern that gets repetitely iterated and applied.
+
 ### Decryption
 Run the following command to compile the C++ code into an executable:
 
@@ -33,16 +72,51 @@ Run the following command to compile the C++ code into an executable:
 g++ .\decrypt.cpp .\obj\cipher.cpp -o decrypt.exe
 ```
 
-Then run the executable. Be sure to enter your pattern, key, and plain text. Also, make sure all input variables are surrounded by double quotes.
+Then run the executable. Be sure to enter your pattern, key, and ciphertext. Also, make sure all input variables are surrounded by double quotes.
 
 ```
 .\decrypt.exe "CIPHERTEXT" "CIPHER_KEY_1, CIPHER_KEY_2, ..., CIPHER_KEY_N" "PATTERN_ITEM_1, PATTERN_ITEM_2, ..., PATTERN_ITEM_N"
 ```
 
+#### Example
+
+In other words,
+
+```
+decrypt.exe "vrphwklqj" "3,4" "1,2"
+```
+
+This command should generate the following plaintext:
+
+```
+something
+```
+
+Stemming from the following cipher table with shifted rows:
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| A | B | C | D | E | F | G | H | I | J  | K  | L  | M  | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  |
+| D | E | F | G | H | I | J | K | L | M  | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  | A  | B  | C  |
+| E | F | G | H | I | J | K | L | M | N  | O  | P  | Q  | R  | S  | T  | U  | V  | W  | X  | Y  | Z  | A  | B  | C  | D  |
+
+Thus, when looping over each character in the plaintext (i=1,2,..,n), they will be swapped with their index (i) in the new row (1 or 2).
+Which row is indicated by the pattern that gets repetitely iterated and applied.
+
+## Limitations
+
+Here is a short list of limitations currently observed:
+
+```
+- integer keys
+- shoft key lists (n <= 3)
+- integer patterns
+- short pattern list (n <= 3 )
+```
+
 ## Acknowledgements
 ```
 Noah Jennings 
-    TC 
     ntjennings1@gmail.com
     Virginia Beach, VA
 ```

@@ -331,8 +331,7 @@ void Cipher::encrypt()
         }
         else
         {
-
-            if (j == this->getPattern().size())
+            if (j >= this->getPattern().size())
             {
                 j = 1;
             }
@@ -351,7 +350,7 @@ void Cipher::encrypt()
 
             }
 
-            temp = temp + this->getTable()[j+1][p];            
+            temp = temp + this->getTable()[j+1][p];  
             j = j + 1;
         }
 
