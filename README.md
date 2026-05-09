@@ -1,10 +1,10 @@
 # Utils
 
-Utilities created for machines on a network.
+Windows utilities.
 
 ## Tools
 
-This repository will have a collection of useful tools that relate to the following topics:
+This repository will have a collection of useful Windows tools that relate to the following topics:
 
 ### Ciphers
 
@@ -25,7 +25,6 @@ Script utilties contain useful commands for automation. Each of the following to
 
 - machine state
 - network manipulation
-- penetration testing 
 
 ## Acknowledgements
 ```
